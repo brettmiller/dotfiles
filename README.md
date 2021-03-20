@@ -21,7 +21,7 @@ and/or
 
 ### Scripted process
 
-`curl -L https://github.com/brettmiller/dotfiles/blob/main/.dotfiles/setup.sh | bash`
+`curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | bash`
 
 ## Usage
 
