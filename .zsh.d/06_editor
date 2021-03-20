@@ -1,0 +1,12 @@
+if [[ -x /usr/local/bin/vim ]]; then
+  EDITOR="/usr/local/bin/vim"
+else
+  EDITOR="/usr/bin/vim"
+fi
+
+export EDITOR
+
+# setup using ctrl-x ctrl-e to edit current command in $EDITOR like in `bash`
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line

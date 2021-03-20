@@ -1,0 +1,12 @@
+# "private "external included
+[ -n "$USER_PRIVATE_INCLUDES_DIR" ] || USER_PRIVATE_INCLUDES_DIR=$HOME/.zsh.d.private
+readonly USER_PRIVATE_INCLUDES_DIR
+
+#  Inclued/source all exteral files in $USER_PRIVATE_INCLUDES_DIR (default is $HOME/.zsh.d.private)
+if [[ -d $USER_PRIVATE_INCLUDES_DIR && -r $USER_PRIVATE_INCLUDES_DIR && \
+    -x $USER_PRIVATE_INCLUDES_DIR ]]; then
+    for i in $(LC_ALL=C command ls "$USER_PRIVATE_INCLUDES_DIR" | egrep -v ".*~|.*.bak|.*.swp|\#*\#|.*.dpkg*|.*.rpm*|Makefile.*|.*.off|.*-off"); do
+        i=$USER_PRIVATE_INCLUDES_DIR/$i
+        [[ -f $i && -r $i ]] && . "$i" #Uncomment for debugging -  && echo "included: $i"
+    done
+fi

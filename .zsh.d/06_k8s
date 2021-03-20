@@ -1,0 +1,25 @@
+# add path for krew kubeclt plugins
+export PATH=$PATH:${HOME}/.krew/bin
+
+# Disable kubeenv prompt and set our own w/ namespace and KUBEENV (current k8s cluster context)
+export KUBEENV_DISABLE_PROMPT=1
+
+_kube_prompt() {
+  if [[ ! -z $KUBEENV ]]; then
+    CURRENT_NAMESPACE=$(/usr/local/bin/kubectl config view --minify --output 'jsonpath={..namespace}'|| echo '_')
+    #echo "%F{124}"${CURRENT_NAMESPACE}"%F{118}"@"%F{117}"${KUBEENV}"%F{255}"
+    ## Prompt with "(namespace@cluster_context)"
+    #echo "(%F{cyan}"${CURRENT_NAMESPACE}"%f"@"%F{blue}"${KUBEENV}"%f) "
+    ## Prompt with "(ns:namespace ctx:cluster_context)"
+    #echo "(ns:%F{cyan}"${CURRENT_NAMESPACE}"%f" "ctx:%F{blue}"${KUBEENV}"%f) "
+    ## Prompt with "(ctx:cluster_context ns:namespace)"
+    #echo "(ctx:%F{blue}"${KUBEENV}"%f" "ns:%F{cyan}"${CURRENT_NAMESPACE}"%f) "
+    # Prompt with (ctx:namespace) ctx in blue and namespace in cyan
+    echo "(%F{blue}"${KUBEENV}"%f":"%F{cyan}"${CURRENT_NAMESPACE}"%f) "
+  fi
+}
+
+PROMPT='$(_kube_prompt)'$PROMPT
+
+# Aliases
+alias kcap='k resource-capacity'

@@ -1,0 +1,19 @@
+let mapleader=' '
+
+" base64-encode(visual-selection) -> F2 -> encoded base64-string
+if has ('macunix')
+  :vnoremap <F2>        c<c-r>=system('base64', @")<cr><esc>
+  :vnoremap <leader>e c<c-r>=system('base64', @")<cr><esc>
+elseif has('unix')
+  :vnoremap <F2> c<c-r>=system('base64 -w 0', @")<cr><esc>
+  :vnoremap <leader>64e c<c-r>=system('base64 -w 0', @")<cr><esc>
+endif
+
+" base64-decode(visual-selection) -> F3 -> decoded string
+ if has ('macunix')
+  :vnoremap <F3> c<c-r>=system('base64 -D', @")<cr><esc>
+  :vnoremap <leader>d c<c-r>=system('base64 -D', @")<cr><esc>
+elseif has('unix')
+  :vnoremap <F3> c<c-r>=system('base64 -d', @")<cr>
+  :vnoremap <leader>64d c<c-r>=system('base64 -d', @")<cr>
+endif

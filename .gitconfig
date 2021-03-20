@@ -1,0 +1,59 @@
+[user]
+  name = Brett Miller
+  email = brett.miller@vitalsource.com
+[credential]
+  helper = osxkeychain
+[push]
+  default = simple
+[alias]
+  a = add
+  b = branch
+  bsu = branch --set-upstream-to
+  br = ls-remote --heads
+  c = commit
+  cm = commit -m
+  cam = commit -am
+  ce = commit --allow-empty -m 'empty commit'
+  cl = clone
+  co = checkout
+  cob = checkout -b
+  com = checkout master
+  cop = checkout production
+  default = "!funct() { git symbolic-ref refs/remotes/origin/HEAD | awk -F'/' '{print $NF}'; }; funct" # print default branch
+  cod = "!git checkout $(git default)" # checkout default branch
+  d = diff
+  dc = diff --cached
+  dy = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
+  ds = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
+  diff-y = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff" # side-by-side diff using `colordiff`
+  l = log
+  p = push
+  pl = pull
+  ra = remote add
+  rr = remote rm
+  s = status
+  st = stash
+  top = rev-parse --show-toplevel
+  dry-merge = "!d() { git merge-tree $(git merge-base $1 $2) $2 $1; }; d" #check merge w/o merging-https://stackoverflow.com/a/6283843
+  # https://tekin.co.uk/2020/06/jump-from-a-git-commit-to-the-pr-in-one-command
+  merge-commits = "!funct() { git log --merges --reverse --oneline --ancestry-path $1..origin | grep \"Merge pull request\"; }; funct"
+  pr-number = "!funct() { git merge-commits $1 | head -n1 | sed -n \"s/^.*Merge pull request #\\\\s*\\\\([0-9]*\\\\).*$/\\\\1/p\"; }; funct"
+  web-url = "!funct() { git config remote.origin.url | sed -e\"s/git@/https:\\/\\//\" -e\"s/\\.git$//\" | sed -E \"s/(\\/\\/[^:]*):/\\1\\//\"; }; funct"
+  pr = "!funct() { open \"$(git web-url)/pull/$(git pr-number $1)\" ;}; funct"  # given a commit hash, uses 3 prior functions to find and open the github pr containing it
+  # end
+  listalias = config --get-regexp alias
+  aliaslist = config --get-regexp alias
+[diff]
+  compactionHeuristic = true
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[pager]
+  branch = false
+[pull]
+  ff = only
+[init]
+  defaultBranch = main
+[core]
+  attributesfile = /Users/bmille2/.gitattributes
+

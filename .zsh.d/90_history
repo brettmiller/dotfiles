@@ -1,0 +1,7 @@
+# put history settings last so they override OMZ
+HISTFILE=~/.zsh_history
+HISTSIZE=250000
+SAVEHIST=500000
+setopt appendhistory
+setopt extendedhistory
+setopt histignorespace

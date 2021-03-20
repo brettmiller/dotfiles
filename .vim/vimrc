@@ -1,0 +1,106 @@
+" Vundle config
+" General setup info at https://github.com/VundleVim/Vundle.vim
+" To install configured plugins/bundles:
+"	Launch vim, run :PluginInstall (or vim +PluginInstall +qal )
+
+filetype off                   " required!
+
+"set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=${HOME}/.vim/bundle/Vundle.vim/
+"call vundle#rc()
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'VundleVim/Vundle.vim'
+" don't conceal quotes
+let g:vim_json_syntax_conceal = 0
+
+" vim-polyglot - collection of language packs
+" https://github.com/sheerun/vim-polyglot - Highlight all the things!
+Plugin 'sheerun/vim-polyglot'
+
+" Plugins
+"	github repos just need the repo location w/o https://github.com/
+"	from vim-script repos only need the plugin name (ie. 'FuzzyFinder')
+"	from non github repos give full git url (ie. git://git.myrepos.com/plugin.git)
+" ***To install bundles while in vim run:  :PluginInstall (or `vim +PluginInstall +qall` from the cmd line)
+
+"Plugin 'fmoralesc/vim-pad.git'
+"" --- vim-pad config ---
+"let g:pad#dir="~/notes"
+"" Open files in main window - default is a split window the same height as the __Pad__ buffer (defaults to 8)
+"let g:pad_open_in_split=0
+
+" vim-airline lighter plugin for powerline like status bar & theming
+Plugin 'vim-airline/vim-airline'
+"let g:airline_powerline_fonts = 1
+"let g:airline_powerline_symbols = 'fancy'
+
+"Plugin 'Lokaltog/vim-powerline'
+"let g:Powerline_symbols = 'fancy'
+"set t_Co=256 "powerline requires a 256-color terminal, explicitly tell Vim the terminal supports 256 colors
+"let g:Powerline_stl_path_style = 'relative'
+"let g:Powerline_stl_path_style = 'full'
+"let g:Powerline_colorscheme = 'bm'
+
+"git plugin - https://github.com/tpope/vim-fugitive
+Plugin 'tpope/vim-fugitive'
+
+" Insert or delete brackets, parens, quotes in pair. https://github.com/jiangmiao/auto-pairs
+Plugin 'jiangmiao/auto-pairs'
+
+" JSON syntax highlighting from vim-scripts.org
+"Plugin 'JSON.vim'
+
+" JSON distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.
+Plugin 'elzr/vim-json'
+
+"* TURNED OFF NOT EASY TO USE AND BREAKS TAB? To turn on uncomment the "Plugin ..." line below
+" Ultisnips - snippit plugin (similar to TextMate)
+" 	from https://github.com/MarcWeber/UltiSnips which is a fork of http://github.com/SirVer/ultisnips added features
+" 	including ability to ready snipmate snippet files on the fly and reloading snippets if snippet files timestamp changes
+"Plugin 'MarcWeber/ultisnips'
+  " user ctrl-<tab> for completion instead of <tab> (the default) to allow tab to work as normal
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+  " always use first snippet (if there is more than one of the same, possible a utlinips & snipmate with the same name/snippet)
+"--This is trowing an error-- let g:UltiSnips.always_use_first_snippet =1
+
+" vim-snippets - Ultisnips and snipmate snippets (MarkWeber's UltiSnips fork can read both formats)
+" **Turned off since Ultisnips is off
+"Plugin 'honza/vim-snippets'
+
+" vim-chef - syntax highlighting and autocomplete (snippits) -
+"Plugin 'vadv/vim-chef'
+"autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
+
+" vim-puppet - syntax highlighting and formatting for puppet
+Plugin 'rodjek/vim-puppet'
+
+"Plugin 'scrooloose/syntastic'
+"let g:syntastic_aggregate_errors = 1
+
+" allow Vundle to install vim-markdown-preview plugin - https://github.com/JamshedVesuna/vim-markdown-preview
+" default hotkey is crtl-p
+Plugin 'JamshedVesuna/vim-markdown-preview'
+" display images in preview
+let vim_markdown_preview_toggle=1
+" remove preview html file after it's been opened
+let vim_markdown_preview_temp_file=1
+let vim_markdown_preview_browser='Google Chrome'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

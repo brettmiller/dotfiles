@@ -1,0 +1,31 @@
+# Source gcloud sdk bash/zsh setup scripts
+if [[ -d ${HOME}/google-cloud-sdk ]]; then
+  source "${HOME}/google-cloud-sdk/path.zsh.inc"
+  source ${HOME}/google-cloud-sdk/completion.zsh.inc
+  PATH=$PATH:$HOME/google-cloud-sdk/bin # add to path
+fi
+if [[ -d /usr/local/Caskroom/google-cloud-sdk ]] ; then
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+fi
+
+gcp_completion=("${HOME}/google-cloud-sdk/completion.bash.inc" "/usr/lib64/google-cloud-sdk/completion.bash.inc" "/usr/share/google-cloud-sdk/completion.bash.inc" "/usr/local/share/google/google-cloud-sdk/completion.bash.inc" )
+
+for file in ${gcp_completion[@]}; do
+  [[ -r $file ]] && source $file
+done
+
+# enable fzf ** completion for instances(name + zone) 
+_fzf_complete_gcloud() {
+  ARGS="$@"
+  local machines
+  machines=$(gcloud compute instances list --filter='status=RUNNING AND NOT name~gke' --format='csv[no-heading,separator=" --zone="](name,zone)')
+  if [[ $ARGS == 'gcloud '* ]]; then
+    _fzf_complete "--reverse --multi" "$@" < <(
+        echo $machines
+    )
+  else
+    eval "zle ${fzf_default_completion:-expand-or-complete}"
+  fi
+}
+

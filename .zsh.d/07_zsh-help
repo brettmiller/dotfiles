@@ -1,0 +1,4 @@
+# setup zsh online help - help for builtins, alias to `help` to mimic bash
+unalias run-help
+autoload run-help
+alias help=run-help

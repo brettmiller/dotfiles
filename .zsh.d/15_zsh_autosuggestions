@@ -1,0 +1,4 @@
+# zsh auto suggestions https://github.com/zsh-users/zsh-autosuggestions
+# vrse installs from zsh-autosuggestions in the Brewfile
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

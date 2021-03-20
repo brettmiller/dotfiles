@@ -1,0 +1,11 @@
+# Override the prompt from git-prompt. Using it's functions but overriding to put status
+# prompt in a different location (not at the far right of the last prompt line)  
+RPROMPT=''
+
+# Override some git-prompt colors
+# - default for STAGED is red (committed and not pushed)
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[yellow]%}%{●%G%}"
+
+# Override the esc-l/'^[l' keybind to output 'ls^J' (for some reason it also maps to ALT-l. ALT seems to work in place of ESC in several bindings, nfi why)
+bindkey -r "^[l"
+

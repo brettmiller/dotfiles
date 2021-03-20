@@ -1,0 +1,10 @@
+# put things were we want
+export VRSE_BASE_DIR="${HOME}/code/github.com/vitalsource/vrse"
+
+if [[ -d ${VRSE_BASE_DIR} ]]; then
+  # Checkout the newest VRSE
+  cd ${VRSE_BASE_DIR} && git pull ; cd - 
+
+  # Source it
+  source ${VRSE_BASE_DIR}/SOURCEME.zsh
+fi

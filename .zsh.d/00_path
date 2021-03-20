@@ -1,0 +1,46 @@
+# reset/force initial $PATH. This keeps us from getting the PATH from /etc/paths & /etc/paths.d and should
+# keep things more consistent across systems
+PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+# ------ OTHER PATHS -------
+
+# vst-terrafom/bin path
+if [[ -d $HOME/code/github.com/vitalsource/vst-terraform/bin ]]; then
+  export PATH=$PATH:$HOME/code/github.com/vitalsource/vst-terraform/bin
+fi
+
+# Puppet path
+if [[ -d /opt/puppetlabs/bin ]]; then
+  export PATH=$PATH:/opt/puppetlabs/bin
+fi
+
+# Puppet pdk path
+if [[ -d /opt/puppetlabs/pdk/bin ]]; then
+  export PATH=$PATH:/opt/puppetlabs/pdk/bin
+fi
+
+# Add java/openjdk path 
+if [[ -d /usr/local/opt/openjdk/bin ]]; then
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+fi
+
+# brew GNU grep 
+if [[ -d /usr/local/opt/grep/libexec/gnubin ]]; then 
+  export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+fi
+
+# brew GNU Sed
+if [[ -d /usr/local/opt/gnu-sed/libexec/gnubin ]]; then
+  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+fi
+
+# avr-gcc (AVR microcontroller compiler and tools)
+if [[ -d /usr/local/opt/avr-gcc@8/bin ]]; then
+  export PATH="/usr/local/opt/avr-gcc@8/bin:$PATH"
+fi
+
+# kyrat path
+if [[ -d $HOME/code/github.com/other/kyrat/bin/ ]]; then
+  export PATH="$PATH:$HOME/code/github.com/other/kyrat/bin"
+fi
+
