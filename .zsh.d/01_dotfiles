@@ -11,6 +11,8 @@ dotfiles config --local status.showUntrackedFiles no
 # autocomplete
 compdef _precommand dotfiles dtf
 
+# update
+dotfiles pl
 
 # update submodules (OMZ plugins, vim Vundles, etc) - run in a subshell so it's quiet
 ( dotfiles submodule foreach git pull >/dev/null & )
