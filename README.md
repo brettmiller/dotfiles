@@ -4,20 +4,20 @@
 
 ### Maunal process
 
-- clone the repo
+- clone the repo  
 `git clone --bare https://github.com/brettmiller/dotfiles.git $HOME/.dotfiles`
 
-- Set alias
+- Set alias  
 `alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
-and/or
+and/or  
 `alias dtf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
     (should also be added to .zshrc and/or .bashrc)
-- Reset HEAD --hard to keep from getting errors about existing files
+- Reset HEAD --hard to keep from getting errors about existing files  
 `dotfiles reset HEAD --hard`
-- Checkout the files to $HOME 
+- Checkout the files to $HOME   
 `dotfiles checkout`  
 
-- If you have submodules
+- If you have submodules  
 `dotfiles submodule update --init`
 
 ### Scripted process
@@ -38,19 +38,19 @@ dotfiles push
 
 ## New Repo Setup
 
-- create a `.dotfiles` folder to track the files
+- create a `.dotfiles` folder to track the files  
 `git init --bare $HOME/.dotfiles`
 
-- create an alias called `dotfiles` that containes the git args so we don't have to keep typing it out
+- create an alias called `dotfiles` that containes the git args so we don't have to keep typing it out  
 `alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
 
-- tell git to ignore untracked files so your entire `$HOME` doesn't show up as modified
+- tell git to ignore untracked files so your entire `$HOME` doesn't show up as modified  
 `dotfiles config --local status.showUntrackedFiles no`
 
-- add the alias to `.bashrc` or `.zshrc` so we can use it later
+- add the alias to `.bashrc` or `.zshrc` so we can use it later  
 `echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc`
 
-- for zsh tab completion add this to .zshrc
+- for zsh tab completion add this to .zshrc  
 ```compdef _precommand dotfiles dtf```
 
 ### Resources
