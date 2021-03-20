@@ -12,7 +12,8 @@
 and/or
 `alias dtf='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
     (should also be added to .zshrc and/or .bashrc)
-
+- Reset HEAD --hard to keep from getting errors about existing files
+`dotfiles reset HEAD --hard`
 - Checkout the files to $HOME 
 `dotfiles checkout`  
 
