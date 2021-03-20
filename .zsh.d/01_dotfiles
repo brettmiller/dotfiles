@@ -12,7 +12,8 @@ dotfiles config --local status.showUntrackedFiles no
 compdef _precommand dotfiles dtf
 
 # update
-dotfiles pl
+dotfiles pull 
 
-# update submodules (OMZ plugins, vim Vundles, etc) - run in a subshell so it's quiet
-( dotfiles submodule foreach git pull >/dev/null & )
+# update submodules (OMZ plugins, vim Vundles, etc) using --merge (keeps from ending up with detached HEAD) - run in a subshell so it's quiet
+# ( dotfiles submodule foreach git pull >/dev/null & )
+( dotfiles submodules update --remote --recursive --merge >/dev/null & )
