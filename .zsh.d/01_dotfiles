@@ -1,9 +1,9 @@
 # setup git management of dotfiles and other files/directories used across computers
 #
 
-# aliases to allow managing files in $HOME without the whole directory being a git repo
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias dtf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# aliases to allow managing files in $HOME without having .git in $HOME/
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dtf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # set git not to show untracked files in `git status`
 dotfiles config --local status.showUntrackedFiles no
@@ -13,4 +13,4 @@ compdef _precommand dotfiles dtf
 
 
 # update submodules (OMZ plugins, vim Vundles, etc) - run in a subshell so it's quiet
-( dtf submodule foreach git pull >/dev/null & ) 
+( dotfiles submodule foreach git pull >/dev/null & )
