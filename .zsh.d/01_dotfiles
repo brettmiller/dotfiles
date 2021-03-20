@@ -16,4 +16,4 @@ dotfiles pull
 
 # update submodules (OMZ plugins, vim Vundles, etc) using --merge (keeps from ending up with detached HEAD) - run in a subshell so it's quiet
 # ( dotfiles submodule foreach git pull >/dev/null & )
-( dotfiles submodules update --remote --recursive --merge >/dev/null & )
+( dotfiles submodule update --remote --recursive --merge >/dev/null & )
