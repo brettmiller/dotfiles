@@ -29,9 +29,9 @@ Use the `dotfiles` or `dtf` alias in place of `git` to manage the repo
 
 ```dotfiles status
 dotfiles add .vimrc
-dotfiles commit -m "Add vimrc"
-dotfiles add .bashrc
-dotfiles commit -m "Add bashrc"
+dotfiles commit -m "Add .vimrc"
+dotfiles add .zshrc
+dotfiles commit -m "Add .zshrc"
 dotfiles push
 ```
 
