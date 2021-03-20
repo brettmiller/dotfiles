@@ -1,0 +1,2 @@
+export BERGLAS_BUCKET_ID=vst-cb-secrets
+export BERGLAS_CB_KEY="projects/vst-main-build-prod/locations/global/keyRings/berglas/cryptoKeys/berglas-key"

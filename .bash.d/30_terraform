@@ -1,0 +1,4 @@
+if [[ -f ~/code/github.com/vitalsource/vst-terraform/bin/SOURCE_ME ]]; then
+  source ~/code/github.com/vitalsource/vst-terraform/bin/SOURCE_ME
+  alias tf=terraform
+fi

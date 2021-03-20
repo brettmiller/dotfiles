@@ -1,0 +1,8 @@
+# needed by some ruby gems that can't find it
+# cacert.pem from curl - http://curl.haxx.se/ca/cacert.pem
+#export SSL_CERT_FILE='$HOME/etc/ssl/cacert.pem'
+
+if [ -f /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt ]; then
+	# Same cert file as above but install using homebrew (to allow easier updates) 
+	export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+fi

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# only try to run the rbenv setup if we have ruby and it's executable (to deal with our ruby hack for rkhunter on some boxes).
+if [[ -x $(command -v ruby)  ]] ; then 
+  #RUBYVER=$(ruby --version | sed -e 's/.*\([0-9]\.\)\([0-9]\)\.[0-9]\ .*/\1\2/')
+  #Get main ruby version (without the point/patch release) for use in paths below
+  RUBYVER=$(ruby --version | cut -d' ' -f2)
+  
+  # Add ~/.rbenv/bin to $PATH ( also adding $HOME/.gem/ruby/$RUBYVER/bin so system ruby gems installed to $HOME/.gem work)
+  #export PATH="$HOME/.rbenv/bin:$PATH"
+  #export PATH="$HOME/.rbenv/bin:$HOME/.gem/ruby/$RUBYVER/bin:$PATH"
+  # remove ~/.rbenv/bin from path so homebrew version will be used -20130312
+  export PATH="$HOME/.gem/ruby/$RUBYVER/bin:/opt/rbenv/versions/$RUBYVER/bin:/opt/rbenv/bin:$PATH"
+  
+  # enable rbenv shims and autocompletion if we have rbenv
+  if command -v rbenv >/dev/null 2>&1 ; then
+    eval "$(rbenv init - 2>/dev/null)"
+  fi
+  
+  # For system ruby set gem path to a local/user directory
+  # ***Now using gem option "--user-install" instead of setting $GEM_HOME
+  #export GEM_HOME=~/.gem/ruby/$RUBYVER
+
+fi

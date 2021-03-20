@@ -1,0 +1,2 @@
+# use gitignore.io api to create .gitignore files
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
