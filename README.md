@@ -2,9 +2,10 @@
 
 ## Install - setup a new computer
 
-### Scripted process
+### Scripted process 
+curl can be piped to `zsh` or `bash`
 
-`curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | bash`
+`curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | zsh`
 
 ### Maunal process
 
