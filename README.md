@@ -2,6 +2,10 @@
 
 ## Install - setup a new computer
 
+### Scripted process
+
+`curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | bash`
+
 ### Maunal process
 
 - clone the repo  
@@ -19,10 +23,6 @@ and/or
 
 - If you have submodules  
 `dotfiles submodule update --init`
-
-### Scripted process
-
-`curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | bash`
 
 ## Usage
 
