@@ -1,4 +1,6 @@
 # Load rbenv automatically by appending
 # the following to ~/.zshrc:
 
-eval "$(rbenv init -)"
+if command -v rbenv >/dev/null 2>&1 ; then
+  eval "$(rbenv init -)"
+fi
