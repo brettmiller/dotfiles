@@ -44,7 +44,7 @@ if [[ -d $USER_ZSH_INCLUDES_DIR && -r $USER_ZSH_INCLUDES_DIR && \
     -x $USER_ZSH_INCLUDES_DIR ]]; then
     for i in $(LC_ALL=C command ls "$USER_ZSH_INCLUDES_DIR" | egrep -v ".*~|.*.bak|.*.swp|\#*\#|.*.dpkg*|.*.rpm*|Makefile.*|.*.off|.*-off"); do
         i=$USER_ZSH_INCLUDES_DIR/$i
-        [[ -f $i && -r $i ]] && . "$i" #&& echo "included: $i" # <<-- Uncomment for debugging 
+        [[ -f $i && -r $i ]] && . "$i" #&& echo "included: $i" # <<-- Uncomment for debugging
     done
 fi
 unset i
@@ -62,7 +62,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # 20201029 - BREAKING CHANGES                                                                                       # ${vrse_watermark}
 # if `gcloud` is broken and python version is 3.9 and python3.8 is installed set CLOUDSDK_PYTHON version to 3.8     # ${vrse_watermark}
-if ! gcloud >/dev/null 2>&1 && python3 --version | grep -q 3.9; then                                                # ${vrse_watermark}
+if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then                                                # ${vrse_watermark}
   if $(brew --prefix)/opt/python@3.8/bin/python3.8 --version 2>/dev/null | grep -q 3.8; then                        # ${vrse_watermark}
     if [[ -z $CLOUDSDK_PYTHON ]]; then                                                                              # ${vrse_watermark}
       export CLOUDSDK_PYTHON="$(brew --prefix)/opt/python@3.8/bin/python3.8"                                        # ${vrse_watermark}
