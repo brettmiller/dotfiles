@@ -13,6 +13,6 @@ fi
 # Key bindings
 # ------------
 if [[ -f $(brew --prefix)/opt/fzf/shell/key-bindings.zsh ]]; then
-  source "$(brew --prefix)//opt/fzf/shell/key-bindings.zsh"
+  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
 fi
 
