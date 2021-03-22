@@ -2,7 +2,7 @@
 
 ## Install - setup a new computer
 
-### Scripted process 
+### Scripted process
 curl can be piped to `zsh` or `bash`
 
 `curl -L https://github.com/brettmiller/dotfiles/raw/main/.dotfiles/setup.sh | zsh`
@@ -19,9 +19,8 @@ and/or
     (should also be added to .zshrc and/or .bashrc)
 - Reset HEAD --hard to keep from getting errors about existing files  
 `dotfiles reset HEAD --hard`
-- Checkout the files to $HOME   
+- Checkout the files to $HOME  
 `dotfiles checkout`  
-
 - If you have submodules  
 `dotfiles submodule update --init`
 
@@ -54,11 +53,12 @@ dotfiles push
 - for zsh tab completion add this to .zshrc  
 ```compdef _precommand dotfiles dtf```
 
-### Requirements 
-[Oh-My-Zsh](https://ohmyz.sh/) (scripted install process handles this)
+### Requirements
+- [Oh-My-Zsh](https://ohmyz.sh/) - just the repo cloned to ${HOME}/.oh-my-zsh (don't use their installer)  
+`git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh` (scripted install process handles this)
 
 ### Useful but not required
-[fzf](https://github.com/junegunn/fzf)
+- [fzf](https://github.com/junegunn/fzf)
 
 ### Resources
 
