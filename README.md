@@ -54,9 +54,15 @@ dotfiles push
 - for zsh tab completion add this to .zshrc  
 ```compdef _precommand dotfiles dtf```
 
+### Requirements 
+[Oh-My-Zsh](https://ohmyz.sh/) (scripted install process handles this)
+
+### Useful but not required
+[fzf](https://github.com/junegunn/fzf)
+
 ### Resources
 
-[smplman's dotfiles](https://raw.githubusercontent.com/smp4488/dotfiles/master/README.md)  
+[smplman's dotfiles](https://github.com/smp4488/dotfiles)  
 [How to manage your dotfiles with git](https://medium.com/@antelolive/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)  
 [Ask HN: What do you use to manage dotfiles?](https://news.ycombinator.com/item?id=11070797)  
 [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)

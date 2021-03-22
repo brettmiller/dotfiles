@@ -1,4 +1,7 @@
-echo "Cloning repo, trying with ssh and will fall back to https"
+echo "Cloning Oh-My-Zsh"
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
+
+echo "Cloning dotfiles repo, trying with ssh and will fall back to https"
 git clone --bare git@github.com:brettmiller/dotfiles.git $HOME/.dotfiles || \
 git clone --bare https://github.com/brettmiller/dotfiles.git $HOME/.dotfiles
 
