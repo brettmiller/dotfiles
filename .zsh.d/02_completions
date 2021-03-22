@@ -11,12 +11,16 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 ## Let oh-my-zsh kubectl plugin handle completions, actually no, it doesn't update completions
 ## completions for `kubectl`
 #compdef k=kubectl
-source <(kubectl completion zsh)
+if command -v kubectl >/dev/null ; then
+  source <(kubectl completion zsh)
 #complete -F __start_kubectl k
+fi
 
 
 # completions for `berglas`
-source <(berglas completion zsh)
+if command -v berglas >/dev/null ; then
+  source <(berglas completion zsh)
+fi
 
 autoload -U compinit
 compinit
