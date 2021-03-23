@@ -2,6 +2,11 @@
 # keep things more consistent across systems
 PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
+# If we're on linux and Homebrew is installed setup PATHs
+if [[ $(uname --s) == Linux && -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # ------ OTHER PATHS -------
 
 # vst-terrafom/bin path
@@ -19,13 +24,13 @@ if [[ -d /opt/puppetlabs/pdk/bin ]]; then
   export PATH=$PATH:/opt/puppetlabs/pdk/bin
 fi
 
-# Add java/openjdk path 
+# Add java/openjdk path
 if [[ -d /usr/local/opt/openjdk/bin ]]; then
   export PATH="/usr/local/opt/openjdk/bin:$PATH"
 fi
 
-# brew GNU grep 
-if [[ -d /usr/local/opt/grep/libexec/gnubin ]]; then 
+# brew GNU grep
+if [[ -d /usr/local/opt/grep/libexec/gnubin ]]; then
   export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 fi
 
