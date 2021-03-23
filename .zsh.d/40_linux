@@ -1,6 +1,6 @@
 # If we're on Linux do Linux things
 #
-if [[ $(uname -s) -eq "Linux" ]]; then
+if [[ $(uname -s) == "Linux" ]]; then
 
   # If Xwayland is running tell QT to use the Wayland Qt Platform Abstraction (QPA) plugin
   # needed on ChomeOS Crostini

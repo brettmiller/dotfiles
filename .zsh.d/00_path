@@ -3,7 +3,7 @@
 PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 # If we're on linux and Homebrew is installed setup PATHs
-if [[ $(uname --s) == Linux && -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+if [[ $(uname -s) == Linux && -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
