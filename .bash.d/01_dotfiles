@@ -2,7 +2,7 @@
 #
 
 # don't run if we're remote ($KYRAT_HOME is set) or we don't have `git`
-if [[ ! ${KYRAT_HOME} == '' ]] || ! command -v git >/dev/null ; then
+if [[ ! ${KYRAT_HOME} == '' ]] || command -v git >/dev/null ; then
 
   # aliases to allow managing files in $HOME without having .git in $HOME/
   alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
