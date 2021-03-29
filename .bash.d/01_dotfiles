@@ -1,7 +1,7 @@
 # aliases and setup for git management of dotfiles and other files/directories used across computers
 #
 
-# don't run if we're remote ($KYRAT_HOME is set) or we don't have `git`
+# don't run if we're remote ($KYRAT_HOME is set)
 if [[ -z ${KYRAT_HOME} ]]; then
 
   # aliases to allow managing files in $HOME without having .git in $HOME/
@@ -9,7 +9,7 @@ if [[ -z ${KYRAT_HOME} ]]; then
   alias dtf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
   # set git not to show untracked files in `git status`
-  dotfiles config --local status.showUntrackedFiles no
+  dotfiles config --local status.showUntrackedFiles no || echo FAIL
 
   # update submodules (OMZ plugins, vim Vundles, etc) - run in a subshell so it's quiet
   ( dotfiles submodule foreach git pull >/dev/null & )
