@@ -17,10 +17,13 @@
   cl = clone
   co = checkout
   cob = checkout -b
+  sw = switch
+  swc = switch -c
   com = checkout master
   cop = checkout production
   default = "!funct() { git symbolic-ref refs/remotes/origin/HEAD | awk -F'/' '{print $NF}'; }; funct" # print default branch
-  cod = "!git checkout $(git default)" # checkout default branch
+  cod = "!git switch $(git default)" # checkout default branch
+  swd = "!git switch $(git default)" # checkout default branch
   d = diff
   dc = diff --cached
   dy = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
@@ -52,8 +55,6 @@
   branch = false
 [pull]
   ff = only
-[init]
-  defaultBranch = main
 [core]
   attributesfile = /Users/bmille2/.gitattributes
 
