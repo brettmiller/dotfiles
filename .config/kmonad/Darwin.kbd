@@ -1,7 +1,8 @@
 ;; See keymap/tutorial.kbd for a more complete tutorial
 
 (defcfg
-  input (iokit-name "Apple Internal Keyboard / Trackpad") ;; MBP keyboard
+  ;;input (iokit-name "Apple Internal Keyboard / Trackpad") ;; MBP keyboard
+  input (iokit-name) ;; MBP keyboard
   output (kext)
   fallthrough true
 )
@@ -32,7 +33,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _    _    _
+  _    _    _    _              @spc           _    _    _    _    _
 )
 
 ;; --- space --- (layer 2)
