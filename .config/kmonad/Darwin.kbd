@@ -1,8 +1,8 @@
 ;; See keymap/tutorial.kbd for a more complete tutorial
 
 (defcfg
-  ;;input (iokit-name "Apple Internal Keyboard / Trackpad") ;; MBP keyboard
-  input (iokit-name) ;; MBP keyboard
+  input (iokit-name "Apple Internal Keyboard / Trackpad") ;; MBP keyboard
+  ;;input (iokit-name) ;; all keyboards
   output (kext)
   fallthrough true
 )
@@ -22,7 +22,7 @@
 ;; can use `fn' as a modifier (like Emacs).
 
 ;;(defalias fn (around (layer-toggle function) fn))
-(defalias caps (tap-hold 200 esc lctl))     ;; caps as Esc/ctl
+(defalias cesc (tap-hold 200 esc lctl))     ;; caps as Esc/ctl
 
 ;; --- LAYERS ---
 
@@ -31,7 +31,7 @@
   _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @cesc _   _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _              @spc           _    _    _    _    _
 )
