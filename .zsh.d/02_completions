@@ -16,6 +16,10 @@ if command -v kubectl >/dev/null ; then
 #complete -F __start_kubectl k
 fi
 
+# completions for gh (github cli)
+if command -v gh >/dev/null ; then
+  source <(gh completion -s zsh)
+fi
 
 # completions for `berglas`
 if command -v berglas >/dev/null ; then
@@ -28,15 +32,7 @@ compinit
 # terraform
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-# generated with `pip3 completion --zsh` 
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
-}
-compctl -K _pip_completion pip3
-# pip zsh completion end
+# generated with `pip3 completion --zsh`
+if command -v pip3 --version > /dev/null ; then
+  source <(pip3 completion --zsh)
+if
