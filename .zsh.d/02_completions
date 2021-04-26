@@ -35,4 +35,5 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # generated with `pip3 completion --zsh`
 if command -v pip3 --version > /dev/null ; then
   source <(pip3 completion --zsh)
-if
+fi
+
