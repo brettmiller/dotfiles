@@ -41,16 +41,45 @@
                             }
                         ]
                     },
+                   {
+                       "description": "spacebar when held is hyper (shift+cmd+ctrl+option) ",
+                       "manipulators": [
+                          {
+                            "from": {
+                                "key_code": "spacebar"
+                            },
+                            "to_if_alone": [
+                                {
+                                    "key_code": "spacebar",
+                                    "repeat": false
+                                }
+                            ],
+                            "to": [
+                                {
+                                    "key_code": "left_shift",
+                                    "modifiers": [
+                                        "left_command",
+                                        "left_control",
+                                        "left_option"
+                                    ]
+                                }
+                            ],
+                            "type": "basic"
+                        }
+                       ]
+                    },
                     {
-                        "description": "Change left_command+left_ctrl+hjkl to arrow keys",
+                        "description": "Change hyper+hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
+                                            "left_shift",
                                             "left_command",
-                                            "left_control"
+                                            "left_control",
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -69,8 +98,10 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
+                                            "left_shift",
                                             "left_command",
-                                            "left_control"
+                                            "left_control",
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -89,8 +120,10 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
+                                            "left_shift",
                                             "left_command",
-                                            "left_control"
+                                            "left_control",
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -109,8 +142,10 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
+                                            "left_shift",
                                             "left_command",
-                                            "left_control"
+                                            "left_control",
+                                            "left_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -123,6 +158,55 @@
                                     }
                                 ],
                                 "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change hyper+; = backspace hyper+d = del ",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ],
+                                  "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward"
+                                    }
+                                ],
+                                  "type": "basic"
                             }
                         ]
                     }
