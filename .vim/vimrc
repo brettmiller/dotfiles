@@ -50,6 +50,11 @@ Plugin 'tpope/vim-fugitive'
 " Insert or delete brackets, parens, quotes in pair. https://github.com/jiangmiao/auto-pairs
 Plugin 'jiangmiao/auto-pairs'
 
+" Jump outside of '"({
+if !exists('g:AutoPairsShortcutJump')
+  let g:AutoPairsShortcutJump = '<C-l>'
+endif
+
 " JSON syntax highlighting from vim-scripts.org
 "Plugin 'JSON.vim'
 
