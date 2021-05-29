@@ -41,32 +41,32 @@
                             }
                         ]
                     },
-                   {
-                       "description": "spacebar when held is hyper (shift+cmd+ctrl+option) ",
-                       "manipulators": [
-                          {
-                            "from": {
-                                "key_code": "spacebar"
-                            },
-                            "to_if_alone": [
-                                {
-                                    "key_code": "spacebar",
-                                    "repeat": false
-                                }
-                            ],
-                            "to": [
-                                {
-                                    "key_code": "left_shift",
-                                    "modifiers": [
-                                        "left_command",
-                                        "left_control",
-                                        "left_option"
-                                    ]
-                                }
-                            ],
-                            "type": "basic"
-                        }
-                       ]
+                    {
+                        "description": "spacebar when held is hyper (shift+cmd+ctrl+option) ",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     },
                     {
                         "description": "Change hyper+hjkl to arrow keys",
@@ -184,7 +184,7 @@
                                         "key_code": "delete_or_backspace"
                                     }
                                 ],
-                                  "type": "basic"
+                                "type": "basic"
                             },
                             {
                                 "from": {
@@ -206,7 +206,7 @@
                                         "key_code": "delete_forward"
                                     }
                                 ],
-                                  "type": "basic"
+                                "type": "basic"
                             }
                         ]
                     }
@@ -406,6 +406,19 @@
                         "is_pointing_device": false,
                         "product_id": 19266,
                         "vendor_id": 65261
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 13360,
+                        "vendor_id": 19280
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
