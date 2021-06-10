@@ -1,0 +1,2 @@
+bind '"[1;9D":backward-word'
+bind '"[1;9C":forward-word'
