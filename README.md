@@ -10,8 +10,8 @@ curl can be piped to `zsh` or `bash`
 ### Maunal process
 
 - clone the repo  
-`git clone --bare https://github.com/brettmiller/dotfiles.git $HOME/.dotfiles` 
-or 
+`git clone --bare https://github.com/brettmiller/dotfiles.git $HOME/.dotfiles`
+or  
 `git clone --bare git@github.com:brettmiller/dotfiles.git $HOME/.dotfiles`
 
 - Set alias  
