@@ -24,9 +24,10 @@ alias srl='exec $SHELL -l'
 # show all shell function, minus the _<NAME> functions that are (mostly?) for completions
 alias listfunctions='print -l ${(ok)functions[(I)[^_]*]}'
 
-# alias kubeenv/k8 functions to "better" names
+# kubeenv/k8 functions to "better" names and kubeclt to k
 alias k8no='nok8'
 alias k8rm='rmk8'
+alias k='kubectl'
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
