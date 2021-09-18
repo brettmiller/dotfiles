@@ -3,6 +3,7 @@ alias removelastcmd='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 alias rmlastcmd='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 
 alias get='git'
+alias gw='open $(git web-url)' # open current git repo url in browser
 alias vim-install="rake -f ~/.vim/rakefile-vim-install"
 alias mm='milkmaid'
 alias hg='history | grep $*'
