@@ -1,0 +1,4 @@
+.config/gcloud
+.config/gcloud/**
+.zsh.d.private
+.zsh.d.private/**
