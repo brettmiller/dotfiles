@@ -21,6 +21,10 @@ if command -v gh >/dev/null ; then
   source <(gh completion -s zsh)
 fi
 
+if command -v steampipe > /dev/null ; then
+  steampipe completion zsh > ${HOME}/.zsh.d/zsh-completions/_steampipe
+fi
+
 # completions for `berglas`
 if command -v berglas >/dev/null ; then
   source <(berglas completion zsh)
