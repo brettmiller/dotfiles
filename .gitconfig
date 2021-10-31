@@ -58,3 +58,5 @@
 [core]
   attributesfile = /Users/bmille2/.gitattributes
 
+[init]
+	defaultBranch = main
