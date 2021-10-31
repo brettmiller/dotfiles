@@ -28,6 +28,10 @@ if command -v gh >/dev/null ; then
   gh completion -s zsh >${HOME}/.zsh.d/zsh-completions/_gh
 fi
 
+if command -v steampipe > /dev/null ; then
+  steampipe completion zsh > ${HOME}/.zsh.d/zsh-completions/_steampipe
+fi
+
 # completions for `berglas`
 if command -v berglas >/dev/null ; then
   source <(berglas completion zsh)
