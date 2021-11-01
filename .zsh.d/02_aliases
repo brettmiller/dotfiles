@@ -22,6 +22,7 @@ alias bbi='brew bundle install --file=${HOME}/Brewfile'
 alias git-root='git rev-parse && cd "$(git rev-parse --show-cdup)"'
 alias mysql='/usr/local/opt/mysql-client/bin/mysql'
 alias srl='exec $SHELL -l'
+alias vstpaste="HASTE_SERVER=https://pastebin.vitalsource.com haste"
 # show all shell function, minus the _<NAME> functions that are (mostly?) for completions
 alias listfunctions='print -l ${(ok)functions[(I)[^_]*]}'
 
