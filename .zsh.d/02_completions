@@ -5,6 +5,12 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
+# don't expand aliases _before_ completion has finished
+unsetopt complete_aliases
+
+autoload -U compinit
+compinit
+
 # ignore completions for commands that don't exist
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
@@ -18,7 +24,8 @@ fi
 
 # completions for gh (github cli)
 if command -v gh >/dev/null ; then
-  source <(gh completion -s zsh)
+  #source <(gh completion -s zsh)
+  gh completion -s zsh >${HOME}/.zsh.d/zsh-completions/_gh
 fi
 
 if command -v steampipe > /dev/null ; then
@@ -30,14 +37,17 @@ if command -v berglas >/dev/null ; then
   source <(berglas completion zsh)
 fi
 
-autoload -U compinit
-compinit
-
 # terraform
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # generated with `pip3 completion --zsh`
 if command -v pip3 --version > /dev/null ; then
   source <(pip3 completion --zsh)
+fi
+
+# 1password-cli completions
+if command -v op >/dev/null ; then
+  source <(op completion zsh)
+  compdef _op op
 fi
 

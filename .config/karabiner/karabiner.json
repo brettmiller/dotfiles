@@ -430,10 +430,10 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 832,
-                        "vendor_id": 1452
+                        "product_id": 1,
+                        "vendor_id": 18003
                     },
-                    "ignore": false,
+                    "ignore": true,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
                 },
@@ -443,8 +443,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 1,
-                        "vendor_id": 18003
+                        "product_id": 14649,
+                        "vendor_id": 49835
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
