@@ -72,3 +72,6 @@ if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then
   fi                                                                                                                # ${vrse_watermark}
 fi                                                                                                                  # ${vrse_watermark}
 
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
