@@ -25,6 +25,8 @@ alias srl='exec $SHELL -l'
 alias vstpaste="HASTE_SERVER=https://pastebin.vitalsource.com haste"
 # show all shell function, minus the _<NAME> functions that are (mostly?) for completions
 alias listfunctions='print -l ${(ok)functions[(I)[^_]*]}'
+# an alias with a trailing space will expand alias passed to them (still fails if options are passed to $0)
+alias watch='watch '
 
 # kubeenv/k8 functions to "better" names and kubeclt to k
 alias k8no='nok8'
