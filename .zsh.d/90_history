@@ -3,7 +3,8 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=250000
 export SAVEHIST=500000
 
-setopt SHARE_HISTORY # like INC_APPEND_HISTORY but also imports(reads) when history is called
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
+setopt share_history     # like INC_APPEND_HISTORY but also imports(reads) when history is called
+setopt extended_history  # record timestamp of command in HISTFILE
+setopt hist_ignore_space # ignore commands that start with space
+setopt hist_find_no_dups # don't show dups when searching
+setopt hist_verify       # show command with history expansion to user before running it
