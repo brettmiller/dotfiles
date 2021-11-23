@@ -1,6 +1,7 @@
 # Setup fzf
 # ---------
-FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob '!.git/*'"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob '!.git/*'"
+export FZF_TMUX_HEIGHT='50%'
 
 if [[ ! "$PATH" == *$(brew --prefix)/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}$(brew --prefix)/opt/fzf/bin"
