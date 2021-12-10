@@ -23,7 +23,7 @@ set laststatus=2        " Show the "status" bar
 set magic
 set showmatch           " Show matching bracket for last "}"
 set autoindent
-"set paste              " Don't autoindent when pasting. (adding commented for reference) 
+"set paste              " Don't autoindent when pasting. (adding commented for reference)
 set shiftwidth=4        " This is under the autoindenting.
 set tabstop=2
 set expandtab           " always uses spaces instead of tab characters
@@ -39,13 +39,13 @@ set printoptions=paper:letter,header:0 ",duplex:off  " set printer paper type an
 
 " Maximum column in which to search for syntax items.  In long lines the text after this column is not
 " highlighted and following lines may not be highlighted correctly, because the syntax state is cleared.
-" setting to '0' removes the limit. 
+" setting to '0' removes the limit.
 set synmaxcol=0
 
 " force syntax highlighting to parse from the start of the file (accurate, but can be slow for long files).
 autocmd BufEnter * :syntax sync fromstart
 
-" clear search highlighting with <ESC> -- Off because it breaks arrow key and pgup/pgdn movement in Normal mode. 
+" clear search highlighting with <ESC> -- Off because it breaks arrow key and pgup/pgdn movement in Normal mode.
 " nnoremap <ESC> :nohlsearch<CR><ESC>
 
 " Dictionaries to use for keywork completion
@@ -60,14 +60,14 @@ endfunction
 " }
 
 " Include the Vundle config -- 8/29/12 moved up from the bottom of vimrc so syntax highlighing gets turned on correctly
-"source ~/.vim/vimrc 
+"source ~/.vim/vimrc
 "call SourceIfExists("~/.vim/vimrc")
 call SourceIfExists("$HOME/.vim/vimrc")
 " include key mappings and functions in separate .map and .functions files
-"source ~/.vim/vimrc.map 
+"source ~/.vim/vimrc.map
 "call SourceIfExists("~/.vim/vimrc.map")
 call SourceIfExists("$HOME/.vim/vimrc.map")
-"source ~/.vim/vimrc.functions 
+"source ~/.vim/vimrc.functions
 "call SourceIfExists("~/.vim/vimrc.functions")
 call SourceIfExists("$HOME/.vim/vimrc.functions")
 
@@ -96,7 +96,7 @@ iab tpyo      typo
 iab wwww   www
 
 " In text files, always limit the width of text to 78 characters #vim from RH61 complains about this
-" autocmd BufRead *.txt set tw=78 
+" autocmd BufRead *.txt set tw=78
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
