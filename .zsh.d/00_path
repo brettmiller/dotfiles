@@ -39,6 +39,11 @@ if [[ -d /usr/local/opt/gnu-sed/libexec/gnubin ]]; then
   export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 
+# brew GNU find
+if [[ -d /usr/local/opt/findutils/libexec/gnubin ]]; then 
+  export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+fi
+
 # avr-gcc (AVR microcontroller compiler and tools)
 if [[ -d /usr/local/opt/avr-gcc@8/bin ]]; then
   export PATH="/usr/local/opt/avr-gcc@8/bin:$PATH"

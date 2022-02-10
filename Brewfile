@@ -72,6 +72,7 @@ brew "rg"
 brew "fzf"
 brew "mysql-client"
 brew "grip"
+brew "findutils"
 #brew "displayplacer"
 mas "Yubico Authenticator", id: 1497506650
 mas "Amphetamine", id: 937984704
