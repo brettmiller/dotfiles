@@ -4,4 +4,5 @@ onshellexit() {
   cp ~/.zsh_history ~/.zsh_history-${DATE}
 }
 
-trap onshellexit EXIT TERM ZERR 
+#trap onshellexit EXIT TERM ZERR
+trap onshellexit EXIT TERM
