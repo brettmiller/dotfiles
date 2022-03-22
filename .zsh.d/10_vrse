@@ -6,5 +6,5 @@ if [[ -d ${VRSE_BASE_DIR} ]]; then
   cd ${VRSE_BASE_DIR} && git pull ; cd - 
 
   # Source it
-  source ${VRSE_BASE_DIR}/SOURCEME.zsh
+  source ${VRSE_BASE_DIR}/SOURCEME
 fi
