@@ -59,18 +59,18 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #source "/Users/bmille2/code/github.com/vitalsource/vrse/SOURCEME.zsh" # Added by VRSE
 
 
-
+#### as of 2022-03-25 gcloud w/ python 3.9 isn't broken 
 # 20201029 - BREAKING CHANGES                                                                                       # ${vrse_watermark}
 # if `gcloud` is broken and python version is 3.9 and python3.8 is installed set CLOUDSDK_PYTHON version to 3.8     # ${vrse_watermark}
-if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then                                                # ${vrse_watermark}
-  if $(brew --prefix)/opt/python@3.8/bin/python3.8 --version 2>/dev/null | grep -q 3.8; then                        # ${vrse_watermark}
-    if [[ -z $CLOUDSDK_PYTHON ]]; then                                                                              # ${vrse_watermark}
-      export CLOUDSDK_PYTHON="$(brew --prefix)/opt/python@3.8/bin/python3.8"                                        # ${vrse_watermark}
-    fi                                                                                                              # ${vrse_watermark}
-  else                                                                                                              # ${vrse_watermark}
-    echo 'WARNING: it appears `gcloud` is broken - try running `brew install python@3.8` and restarting your shell' # ${vrse_watermark}
-  fi                                                                                                                # ${vrse_watermark}
-fi                                                                                                                  # ${vrse_watermark}
+#if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then                                                # ${vrse_watermark}
+#  if $(brew --prefix)/opt/python@3.8/bin/python3.8 --version 2>/dev/null | grep -q 3.8; then                        # ${vrse_watermark}
+#    if [[ -z $CLOUDSDK_PYTHON ]]; then                                                                              # ${vrse_watermark}
+#      export CLOUDSDK_PYTHON="$(brew --prefix)/opt/python@3.8/bin/python3.8"                                        # ${vrse_watermark}
+#    fi                                                                                                              # ${vrse_watermark}
+#  else                                                                                                              # ${vrse_watermark}
+#    echo 'WARNING: it appears `gcloud` is broken - try running `brew install python@3.8` and restarting your shell' # ${vrse_watermark}
+#  fi                                                                                                                # ${vrse_watermark}
+#fi                                                                                                                  # ${vrse_watermark}
 
 
 # added by Snowflake SnowSQL installer v1.2

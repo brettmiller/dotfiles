@@ -72,6 +72,7 @@ brew "fzf"
 brew "mysql-client"
 brew "grip"
 brew "findutils"
+brew "numpy" # increases performance of `gcloud compute ssh --tunnel-through-iap` w/ "export CLOUDSDK_PYTHON_SITEPACKAGES=1" set
 #brew "displayplacer"
 mas "Yubico Authenticator", id: 1497506650
 mas "Amphetamine", id: 937984704
