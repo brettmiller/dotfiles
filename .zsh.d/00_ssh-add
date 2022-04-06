@@ -5,7 +5,7 @@ if [[ ! -n $SSH_CONNECTION  ]]; then
   _nonomatch="$(setopt | grep nonomatch)" # check if already set
   setopt nonomatch
   #KEYLIST=`ls ~/.ssh/id_!(*.pub)`
-  KEYLIST=$(ls ~/.ssh/id_* ~/.ssh/google_compute_engine 2>/dev/null | egrep -v "\.pub|aws.pem|boot2docker")
+  KEYLIST=$(ls ~/.ssh/id_* ~/.ssh/google_compute_engine 2>/dev/null | egrep -v "\.pub|\.off|aws.pem|boot2docker")
   # reset nomatch if nonomatch wasn't set
   if [[ -z ${_nonomatch} ]]; then
     unsetopt nonomatch
