@@ -4,6 +4,9 @@ export PATH=$PATH:${HOME}/.krew/bin
 # Disable kubeenv prompt and set our own w/ namespace and KUBEENV (current k8s cluster context)
 export KUBEENV_DISABLE_PROMPT=1
 
+# use gke auth plugin (in k8s v1.25 this has to be used and this envvar may not be needed)
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 _kube_prompt() {
   if [[ ! -z $KUBEENV ]]; then
     CURRENT_NAMESPACE=$(/usr/local/bin/kubectl config view --minify --output 'jsonpath={..namespace}'|| echo '_')
