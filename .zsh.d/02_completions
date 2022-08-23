@@ -51,3 +51,16 @@ if command -v op >/dev/null ; then
   compdef _op op
 fi
 
+# bash completions - allow bash completions to work and load some w/o zsh equivalents
+autoload bashcompinit
+bashcompinit
+
+# dummy functions, for some functions from the bash_completion pkg needed by other bash completions
+_get_comp_words_by_ref() { :; }
+compopt() { :; }
+_filedir() { :; }
+__ltrim_colon_completions() { :; }
+
+# bolt completion - requires bash_completion
+bolt_completions_file=$(find /opt/puppetlabs/ -name bolt_bash_completion.sh)
+[[ -r $bolt_completions_file ]] && source $bolt_completions_file

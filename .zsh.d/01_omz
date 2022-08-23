@@ -75,7 +75,7 @@ ZSH_CUSTOM=${HOME}/.zsh.d/omz-custom
 #plugins=(git git-prompt git-auto-fetch kubectl docker)
 # 2020-09-11 - removed kubectl plugin - doesn't update completions often enough and we've got our own set of aliases. 
 #plugins=(git git-prompt git-auto-fetch docker fzf-tab) # fzf-tab cloned in ~/.zsh.d/omz-custom/plugins
-plugins=(git git-prompt git-auto-fetch docker)
+plugins=(git git-prompt git-auto-fetch docker asdf)
 
 source ${ZSH}/oh-my-zsh.sh
 
