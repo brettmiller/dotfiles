@@ -62,6 +62,6 @@ _filedir() { :; }
 __ltrim_colon_completions() { :; }
 
 # bolt completion - requires bash_completion
-bolt_completions_file=$(find /opt/puppetlabs/ -name bolt_bash_completion.sh)
+bolt_completions_file=$(find /opt/puppetlabs/ -name bolt_bash_completion.sh 2>/dev/null)
 [[ -r $bolt_completions_file ]] && source $bolt_completions_file
 
