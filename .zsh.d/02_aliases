@@ -2,7 +2,7 @@
 alias rmlastcmd='history -d $((HISTCMD-2)) && history -d $((HISTCMD-1))'
 
 alias get='git'
-# use python3 & pip3 when calling python w/o a version 
+# use python3 & pip3 when calling python w/o a version
 alias python='python3'
 alias pip='pip3'
 alias gw='open $(git web-url)' # open current git repo url in browser
