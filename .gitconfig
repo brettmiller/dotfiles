@@ -33,7 +33,7 @@
   dy = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   ds = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   diff-y = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff" # side-by-side diff using `colordiff`
-  dmb = "!git b --merged | egrep -v 'master|main|production' | xargs git b -d" # locally delete merged branches
+  dmb = "!git b --merged | grep -E -v 'master|main|production' | xargs git b -d" # locally delete merged branches
   l = log
   p = push
   pl = pull
