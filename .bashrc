@@ -110,16 +110,6 @@ if [[ -d $USER_BASH_INCLUDES_DIR && -r $USER_BASH_INCLUDES_DIR && \
 fi
 unset i
 
-# Aliases and functions
-# 8/12/09 changed to get inet(ipv4) addr instead of inet6 (orig commented out)
-
-ip ()
-{
-    #ifconfig | awk -v interface=${1:-en1} '$1==interface ":"{getline;print $2}'
-    ifconfig | awk -v interface=${1:-en1} '$1==interface ":"{getline;getline;print $2}'
-  }
-
-
 complete -C /usr/local/bin/terraform terraform
 
 # moved to .bash.d
