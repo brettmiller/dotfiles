@@ -125,14 +125,15 @@ complete -C /usr/local/bin/terraform terraform
 # moved to .bash.d
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# if `gcloud` is broken and python version is 3.9 and python3.8 is installed set CLOUDSDK_PYTHON version to 3.8
-if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then
-  if /usr/local/opt/python@3.8/bin/python3.8 --version 2>/dev/null | grep -q 3.8; then
-    if [[ -z $CLOUDSDK_PYTHON ]]; then
-      export CLOUDSDK_PYTHON=/usr/local/opt/python@3.8/bin/python3.8
+# if `gcloud` exists and broken and python version is 3.9 and python3.8 is installed set CLOUDSDK_PYTHON version to 3.8
+if which gcloud ; then
+  if ! gcloud >/dev/null 2>&1 && python3 --version 2>/dev/null | grep -q 3.9; then
+    if /usr/local/opt/python@3.8/bin/python3.8 --version 2>/dev/null | grep -q 3.8; then
+      if [[ -z $CLOUDSDK_PYTHON ]]; then
+        export CLOUDSDK_PYTHON=/usr/local/opt/python@3.8/bin/python3.8
+      fi
+    else
+      echo 'WARNING: it appears `gcloud` is broken - try running `brew install python@3.8` and restarting your shell'
     fi
-  else
-    echo 'WARNING: it appears `gcloud` is broken - try running `brew install python@3.8` and restarting your shell'
   fi
-fi
-
+fi  
