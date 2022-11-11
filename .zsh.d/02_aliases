@@ -5,6 +5,9 @@ alias get='git'
 # use python3 & pip3 when calling python w/o a version
 alias python='python3'
 alias pip='pip3'
+if which python3 | grep -q '/usr/local/bin' ; then
+	alias pip3='python3 -m pip'
+fi
 alias gw='open $(git web-url)' # open current git repo url in browser
 alias vim-install="rake -f ~/.vim/rakefile-vim-install"
 alias hg='history | grep $*'
