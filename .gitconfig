@@ -33,7 +33,9 @@
   dy = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   ds = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   diff-y = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff" # side-by-side diff using `colordiff`
-  dmb = "!git b --merged | grep -E -v 'master|main|production' | xargs git b -d" # locally delete merged branches
+  dmb = "!git b --merged | grep -E -v $(git default) | xargs git b -d" # locally delete merged branches
+  merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3-"
+  delete-merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3- | xargs -n 1 git push --delete origin"
   l = log
   p = push
   pl = pull
@@ -65,3 +67,5 @@
 
 [init]
   defaultBranch = main
+[fetch]
+	prune = true
