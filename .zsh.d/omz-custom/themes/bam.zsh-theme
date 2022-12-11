@@ -60,8 +60,12 @@ function retcode() {}
     else
       REMOTE="[%{$fg[red]%}REMOTE%{$reset_color%}]"
     fi
+    LOC_COLOR0='blue'
+    LOC_COLOR1='cyan'
   else
     REMOTE=''
+    LOC_COLOR0='green'
+    LOC_COLOR1='yellow'
   fi
 
 # Date in prompt
@@ -71,6 +75,6 @@ function retcode() {}
 PROMPT_DATE="%a %b %d %I:%M:%S"
 
 # alternate prompt with git & hg
-PROMPT=$'%{$fg[white]%}[%{$fg[green]%}%n%b%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[yellow]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%}$${REMOTE} $(mygit)$(hg_prompt_info)
+PROMPT=$'%{$fg[white]%}[%{$fg[${LOC_COLOR0}]%}%n%b%{$fg[white]%}@%{$fg[$LOC_COLOR0]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[${LOC_COLOR1}]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%}${REMOTE} $(mygit)$(hg_prompt_info)
 %{$fg[white]%}[%{$fg[magenta]%}%?$(retcode)%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}%{$fg[white]%}%~%{$fg[white]%}%{$reset_color%}$ '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
