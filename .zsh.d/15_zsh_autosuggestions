@@ -4,5 +4,14 @@
 if [[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
-  echo "zsh-autosuggestions not installed (https://github.com/zsh-users/zsh-autosuggestions)"
+  if [[ ! -d ${HOME}/.local/share/zsh-autosuggestions ]]; then
+    mkdir -p ${HOME}/.local/share
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.local/share/zsh-autosuggestions
+    source ${HOME}/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  else
+    pushd ${HOME}/.local/share/zsh-autosuggestions
+    git pl
+    popd
+    source ${HOME}/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
 fi
