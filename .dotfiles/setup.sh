@@ -5,7 +5,10 @@ echo "Cloning dotfiles repo, trying with ssh and will fall back to https"
 git clone --bare git@github.com:brettmiller/dotfiles.git $HOME/.dotfiles || \
 git clone --bare https://github.com/brettmiller/dotfiles.git $HOME/.dotfiles
 
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+function dotfiles {
+  git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+}
 
 # reset HEAD --hard so we don't get errors about existing files
 dotfiles reset HEAD --hard
