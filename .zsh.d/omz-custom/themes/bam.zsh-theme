@@ -1,10 +1,10 @@
-# Theme originally base on rkj-repos 
+# Theme originally base on rkj-repos
 # (https://github.com/robbyrussell/oh-my-zsh/wiki/Themes#rkj-repos)
 #
 # Modified from original to:
 #   - reorder and simplify the prompt
-#     - less "bling" & less bold 
-#     - change date format and move date 
+#     - less "bling" & less bold
+#     - change date format and move date
 #     - moved PWD to 2nd line and git status to 1st
 #   - support using the git-prompt plugin for git status
 #
@@ -52,13 +52,27 @@ function mygit() {
 
 function retcode() {}
 
+function remote() {
+# Check for SSH and GCP
+  if [[ -n $SSH_CONNECTION ]]; then
+    GCP_PROJECT=$(gcloud info --format="value(config.project)" 2>/dev/null)
+    if [[ -n $GCP_PROJECT ]]; then
+      REMOTE="[%{$fg[red]GCP: ${GCP_PROJECT}%{$reset_color%}]"
+    else
+      REMOTE="[%{$fg[red]REMOTE%{$reset_color%}]"
+    fi
+  else
+    REMOTE=''
+  fi
+}
+
 # Date in prompt
-# "%Y-%m-%d %I:%M:%S" - yyyy-mm-dd 
+# "%Y-%m-%d %I:%M:%S" - yyyy-mm-dd
 #PROMPT_DATE="%Y-%m-%d %I:%M:%S"
 # "%a %b %d %I:%M:%S" - WeekDay Mon dd
 PROMPT_DATE="%a %b %d %I:%M:%S"
 
 # alternate prompt with git & hg
-PROMPT=$'%{$fg[white]%}[%{$fg[green]%}%n%b%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[yellow]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%} $(mygit)$(hg_prompt_info)
+PROMPT=$'%{$fg[white]%}[%{$fg[green]%}%n%b%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[yellow]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%}$(remote) $(mygit)$(hg_prompt_info)
 %{$fg[white]%}[%{$fg[magenta]%}%?$(retcode)%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}%{$fg[white]%}%~%{$fg[white]%}%{$reset_color%}$ '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
