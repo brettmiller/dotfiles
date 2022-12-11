@@ -52,7 +52,6 @@ function mygit() {
 
 function retcode() {}
 
-function remote() {
 # Check for SSH and GCP
   if [[ -n $SSH_CONNECTION ]]; then
     GCP_PROJECT=$(gcloud info --format="value(config.project)" 2>/dev/null)
@@ -64,7 +63,6 @@ function remote() {
   else
     REMOTE=''
   fi
-}
 
 # Date in prompt
 # "%Y-%m-%d %I:%M:%S" - yyyy-mm-dd
@@ -73,6 +71,6 @@ function remote() {
 PROMPT_DATE="%a %b %d %I:%M:%S"
 
 # alternate prompt with git & hg
-PROMPT=$'%{$fg[white]%}[%{$fg[green]%}%n%b%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[yellow]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%}$(remote) $(mygit)$(hg_prompt_info)
+PROMPT=$'%{$fg[white]%}[%{$fg[green]%}%n%b%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}[%b%{$fg[yellow]%}'%D{"$PROMPT_DATE"}%b$'%{$fg[white]%}]%{$reset_color%}$${REMOTE} $(mygit)$(hg_prompt_info)
 %{$fg[white]%}[%{$fg[magenta]%}%?$(retcode)%{$fg[white]%}]%{$reset_color%} %{$fg[white]%}%{$fg[white]%}%~%{$fg[white]%}%{$reset_color%}$ '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
