@@ -12,4 +12,6 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-source "/Users/bmille2/code/github.com/vitalsource/vrse/SOURCEME" # Added by VRSE
+if [[ -f "/Users/bmille2/code/github.com/vitalsource/vrse/SOURCEME" ]]; then
+  source "/Users/bmille2/code/github.com/vitalsource/vrse/SOURCEME" # Added by VRSE
+if
