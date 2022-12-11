@@ -5,8 +5,11 @@
 if [[ -z ${KYRAT_HOME} ]]; then
 
   # aliases to allow managing files in $HOME without having .git in $HOME/
-  alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-  alias dtf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+  function dotfiles {
+    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
+  }
+  #alias dtf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+  alias dtf=dotfiles
 
   # set git not to show untracked files in `git status`
   dotfiles config --local status.showUntrackedFiles no || echo FAIL
