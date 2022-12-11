@@ -9,9 +9,9 @@ else
     git clone https://github.com/zsh-users/zsh-autosuggestions ${HOME}/.local/share/zsh-autosuggestions
     source ${HOME}/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   else
-    pushd ${HOME}/.local/share/zsh-autosuggestions
+    cd ${HOME}/.local/share/zsh-autosuggestions
     git pl
-    popd
+    cd -
     source ${HOME}/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   fi
 fi
