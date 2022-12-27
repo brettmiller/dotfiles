@@ -1,5 +1,10 @@
 # setup git management of dotfiles and other files/directories used across computers
-#
+
+# sleep a random number seconds between .5-5  to try to avoid races when multiple
+# shells start at the same time and do git pulls. Doesn't eliminate them, but helps.
+# (moslty for iTerm)
+#sleep $((RANDOM % 5)) &&
+sleep $(( $(shuf -i 5-50 | head -1) * .10)) &&
 
 # aliases to allow managing files in $HOME without having .git in $HOME/
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -11,7 +16,8 @@ dotfiles config --local status.showUntrackedFiles no
 # autocomplete
 compdef _precommand dotfiles dtf
 
-# update
+# update & sleep a random number of milliseconds before to try to avoid race when
+# multiple shells start at the same time
 dotfiles pull
 
 # update submodules (OMZ plugins, vim Vundles, etc) using --merge (keeps from ending up with detached HEAD) - run in a subshell so it's quiet
