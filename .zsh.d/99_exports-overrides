@@ -1,9 +1,9 @@
 # set to 99_ to ensure these get set and override anything earlier from OMZ, etc.
 
 # Diffrent from defaults: dir - blue
-export LSCOLORS=exfxcxdxbxegedabagacad
+#export LSCOLORS=exfxcxdxbxegedabagacad
 # Diffrent from defaults: dir - blue, symlink - Bold Cyan (light blue)
-#export LSCOLORS=exGxcxdxbxegedabagacad
+export LSCOLORS=exGxcxdxbxegedabagacad
 
 # make zsh file/dir completion colors match `ls` colors
 zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
