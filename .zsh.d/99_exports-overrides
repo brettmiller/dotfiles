@@ -1,4 +1,4 @@
-# set to 99_ to ensure these get set and override anything earlier from OMZ, etc. 
+# set to 99_ to ensure these get set and override anything earlier from OMZ, etc.
 
 # Diffrent from defaults: dir - blue
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -7,3 +7,6 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 
 # make zsh file/dir completion colors match `ls` colors
 zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+
+# zsh-syntax-highlighting needs to run after all other plugins, so sourcing here
+source ${HOME}/.zsh.d/omz-custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
