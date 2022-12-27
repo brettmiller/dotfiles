@@ -53,7 +53,7 @@ function mygit() {
 function retcode() {}
 
 # Check for SSH and GCP
-  if [[ -n $SSH_CONNECTION ]]; then
+  if [[ -n $SSH_CONNECTION ]] || [[ $HOST =~ ".*-ssh$" ]]; then
     GCP_PROJECT=$(gcloud info --format="value(config.project)" 2>/dev/null)
     if [[ -n $GCP_PROJECT ]]; then
       REMOTE="[%{$fg[red]%}GCP: ${GCP_PROJECT}%{$reset_color%}]"
