@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = https://github.com/rodjek/vim-puppet.git
+[submodule ".zsh.d/omz-custom/plugins/zsh-syntax-highlighting"]
+	path = .zsh.d/omz-custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
