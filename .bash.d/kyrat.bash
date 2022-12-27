@@ -10,7 +10,7 @@ if [[ -z $SSH_CONNECTION ]] && command -v kyrat >/dev/null 2>&1; then
   # use sssh for standard ssh
   if [[ -x /usr/local/bin/ssh ]]; then
     alias sssh='/usr/local/bin/ssh'
-  else 
+  else
    alias sssh='/usr/bin/ssh'
   fi
 
@@ -19,4 +19,12 @@ if [[ -z $SSH_CONNECTION ]] && command -v kyrat >/dev/null 2>&1; then
     cp -a ${CLOUD_SDK_PATH}/lib/googlecloudsdk/command_lib/util/ssh/ssh.py{,.orig}
     sed -i.orig -e "s/\('ssh.*'\): 'ssh'/\1: 'kyrat'/g" ${CLOUD_SDK_PATH}/lib/googlecloudsdk/command_lib/util/ssh/ssh.py
   fi
+fi
+
+# attempt to disable kyrat if we've got our dotiles from git
+if ps aux | grep kyrat && [[ -n $SSH_CONNECTION ]] && [[ -d ${HOME}/.dotfiles ]]; then
+  rm -rf $KYRAT_HOME
+  echo "************RESTARTING SHELL*************"
+  exec $SHELL -i
+  alias base64=true
 fi

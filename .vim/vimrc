@@ -16,6 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " don't conceal quotes
 let g:vim_json_syntax_conceal = 0
 
+"alexghergh/securemodelines
+" fork of a fork of https://github.com/ciaranm/securemodelines
+" with some additions and fixes (several from PRs of the original)
+Plugin 'alexghergh/securemodelines'
+let g:secure_modelines_verbose = 1
+
 " vim-polyglot - collection of language packs
 " https://github.com/sheerun/vim-polyglot - Highlight all the things!
 Plugin 'sheerun/vim-polyglot'

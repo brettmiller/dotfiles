@@ -1,3 +1,5 @@
+# vim:ft=zsh
+#
 # Theme originally base on rkj-repos
 # (https://github.com/robbyrussell/oh-my-zsh/wiki/Themes#rkj-repos)
 #

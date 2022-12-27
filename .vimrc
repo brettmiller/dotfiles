@@ -11,6 +11,7 @@
 set nocompatible        " Use Vim defaults (much better!) -- not needed, defaults to nocompatible when vimrc is found
 set bs=indent,eol,start " allow backspacing over everything in insert mode
 set ai                  " always set autoindenting on
+set nomodeline          " disable modeline, using securemodelines plugin
 "set backup             " keep a backup file
 set viminfo='20,\"50    " read/write a .viminfo file, don't store more
                         " than 50 lines of registers
