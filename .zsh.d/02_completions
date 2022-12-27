@@ -70,3 +70,8 @@ if command -v hass-cli >/dev/null ; then
   source <(_HASS_CLI_COMPLETE=zsh_source hass-cli)
 fi
 
+# ha-cli completions (Home Assistant cli)
+if command -v ha >/dev/null ; then
+  source <(ha completion zsh) && compdef _ha ha
+fi
+
