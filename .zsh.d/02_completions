@@ -1,4 +1,4 @@
-fpath=(/usr/local/share/zsh-completions ${HOME}/.zsh.d/zsh-completions $fpath)
+fpath=($(brew --prefix)/share/zsh-completions ${HOME}/.zsh.d/zsh-completions $fpath)
 
 # completions from Homebrew installed commands
 if type brew &>/dev/null; then

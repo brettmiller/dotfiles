@@ -1,8 +1,8 @@
 # zsh auto suggestions https://github.com/zsh-users/zsh-autosuggestions
 # vrse installs from zsh-autosuggestions in the Brewfile
 
-if [[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-  source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
   if [[ ! -d ${HOME}/.local/share/zsh-autosuggestions ]]; then
     mkdir -p ${HOME}/.local/share
