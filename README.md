@@ -44,13 +44,13 @@ dotfiles push
 `git init --bare $HOME/.dotfiles`
 
 - create an alias called `dotfiles` that containes the git args so we don't have to keep typing it out  
-`alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
+`alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
 
 - tell git to ignore untracked files so your entire `$HOME` doesn't show up as modified  
 `dotfiles config --local status.showUntrackedFiles no`
 
 - add the alias to `.bashrc` or `.zshrc` so we can use it later  
-`echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc`
+`echo "alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc`
 
 - for zsh tab completion add this to .zshrc  
 ```compdef _precommand dotfiles dtf```
