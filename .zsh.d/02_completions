@@ -75,3 +75,8 @@ if command -v ha >/dev/null ; then
   source <(ha completion zsh) && compdef _ha ha
 fi
 
+
+# aws cli completions
+if command -v aws_completer > /dev/null
+ complete -C '/usr/local/bin/aws_completer' aws
+fi
