@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/bmille2/.zsh.d'
 let g:netrw_dirhist_3='/Users/bmille2/code/github.com/vitalsource/vst-terraform/resource_collections/global/users/_init'
 let g:netrw_dirhist_2='/Users/bmille2/code/github.com/vitalsource/vst-terraform/resource_collections/global/_modules/vst-gsuite-group'
 let g:netrw_dirhist_1='/Users/bmille2/Dropbox/work_mac/home_dir/.vim/bundle'

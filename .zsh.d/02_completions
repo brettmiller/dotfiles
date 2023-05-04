@@ -77,6 +77,6 @@ fi
 
 
 # aws cli completions
-if command -v aws_completer > /dev/null
+if command -v aws_completer > /dev/null ; then
  complete -C '/usr/local/bin/aws_completer' aws
 fi
