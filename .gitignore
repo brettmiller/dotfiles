@@ -3,3 +3,4 @@
 .zsh.d.private
 .zsh.d.private/**
 .vim/.netrwhist
+.boto
