@@ -2,6 +2,8 @@
 #
 # Script to setup a new Mac
 # TODO - add checks/options to make usable on linux
+#
+# download with `curl https://raw.githubusercontent.com/brettmiller/dotfiles/main/.dotfiles/new_computer_setup.sh -o new_computer_setup.sh`
 
 # functions
 install_prereq() {
