@@ -20,6 +20,7 @@ install_prereq() {
     ${HOME}/Library/Application\ Support/Quicksilver
     ${HOME}/bin
     ${HOME}/Library/Services
+    ${HOME}/Documents
     ?? ${HOME}/Notational_Data_work ${HOME}/notes ??
 
     '
@@ -182,7 +183,7 @@ main () {
   # enable key-repeating
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
-  echo "Cloning 'kyrat'
+  echo "Cloning 'kyrat'"
   cd ${HOME}/code/github.com/other
   git clone git@github.com:fsquillace/kyrat.git
   cd -
@@ -193,6 +194,7 @@ main () {
   #echo "Remember - move ~/Documents/ from old computer (reconfigure syncing w/ Google Backup and Sync)"
   echo "Remember - configure VS Code syncing"
   echo "Remember - configure Jopin sync"
+  echo -e "\n\n**Remember: Copy any 'private' shell rc directories**\n\n"
   #echo -e "\n\nSetup: \n Amphetamine \n Ethernet Status Lite \n Install: Outlook (https://portal.office.com/account) \n "
   echo -e "\n\nSetup: \n Amphetamine \n Install: Outlook (https://portal.office.com/account) \n "
 
@@ -200,7 +202,7 @@ main () {
   echo "gcloud auth adc"
   gcloud auth application-default login
 
-  # set Chrome as default browswer
+  # set Chrome as default browser
   open -a "Google Chrome" --args --make-default-browser
 
 }
