@@ -182,6 +182,12 @@ main () {
   # enable key-repeating
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+  echo "Cloning 'kyrat'
+  cd ${HOME}/code/github.com/other
+  git clone git@github.com:fsquillace/kyrat.git
+  cd -
+  echo ""
+
   echo "Remember - copy ssh keys (from 1password/lastpass/old computer) and/or setup 1Password ssh agent"
   echo "Remember - setup/clone VRSE"
   #echo "Remember - move ~/Documents/ from old computer (reconfigure syncing w/ Google Backup and Sync)"
