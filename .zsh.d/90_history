@@ -1,6 +1,6 @@
 # put history settings last so they override OMZ
 export HISTFILE=~/.zsh_history
-export HISTSIZE=250000
+export HISTSIZE=500000
 export SAVEHIST=500000
 
 setopt share_history     # like INC_APPEND_HISTORY but also imports(reads) when history is called
