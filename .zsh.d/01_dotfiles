@@ -7,8 +7,8 @@
 sleep $(( $(shuf -i 5-50 | head -1) * .10)) &&
 
 # aliases to allow managing files in $HOME without having .git in $HOME/
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias dtf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dtf='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # set git not to show untracked files in `git status`
 dotfiles config --local status.showUntrackedFiles no

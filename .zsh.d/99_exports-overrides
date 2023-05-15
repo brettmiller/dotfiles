@@ -9,4 +9,4 @@ export LSCOLORS=exGxcxdxbxegedabagacad
 zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
 
 # zsh-syntax-highlighting needs to run after all other plugins, so sourcing here
-source ${HOME}/.zsh.d/omz-custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${HOME}/.zsh.d/omz-custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

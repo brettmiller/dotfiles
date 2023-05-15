@@ -1,4 +1,4 @@
-fpath=($(brew --prefix 2>/dev/null)/share/zsh-completions ${HOME}/.zsh.d/zsh-completions /usr/share/zsh/vendor-completions $fpath)
+fpath=($(brew --prefix 2>/dev/null)/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
 
 # completions from Homebrew installed commands
 if type brew &>/dev/null; then
@@ -25,11 +25,11 @@ fi
 # completions for gh (github cli)
 if command -v gh >/dev/null ; then
   #source <(gh completion -s zsh)
-  gh completion -s zsh >${HOME}/.zsh.d/zsh-completions/_gh
+  gh completion -s zsh >"${HOME}/.zsh.d/zsh-completions/_gh"
 fi
 
 if command -v steampipe > /dev/null ; then
-  steampipe completion zsh > ${HOME}/.zsh.d/zsh-completions/_steampipe
+  steampipe completion zsh > "${HOME}/.zsh.d/zsh-completions/_steampipe"
 fi
 
 # completions for `berglas`

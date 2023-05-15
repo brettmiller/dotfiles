@@ -1,5 +1,5 @@
 # add path for krew kubeclt plugins
-export PATH=$PATH:${HOME}/.krew/bin
+export PATH=$PATH:"${HOME}/.krew/bin"
 
 # Disable kubeenv prompt and set our own w/ namespace and KUBEENV (current k8s cluster context)
 export KUBEENV_DISABLE_PROMPT=1
