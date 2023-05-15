@@ -174,10 +174,10 @@ main () {
   read -p 'To allow `brew` to install from the Apple App Store using `mas` sign in to the App Store then hit [Return]'
 
   echo "Installing software from Homebrew"
-  ${BREWPREFIX}/brew bundle --file="${HOME}/Brewfile"
+  ${BREWPREFIX}/bin/brew bundle --file="${HOME}/Brewfile"
 
   echo 'Add ${BREWPREFIX}/bin/zsh to /etc/shells (may ask for password to `sudo`)'
-  echo '${BREWPREFIX}/bin/zsh' >> /etc/shells || echo '${BREWPREFIX}/bin/zsh' | sudo tee -a /etc/shells
+  echo "${BREWPREFIX}/bin/zsh" >> /etc/shells || echo "${BREWPREFIX}/bin/zsh" | sudo tee -a /etc/shells
 
   echo "Making ${BREWPREFIX}/bin/zsh user's default shell"
   chsh -s ${BREWPREFIX}/bin/zsh
