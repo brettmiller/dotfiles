@@ -11,7 +11,7 @@ install_prereq() {
   xcode-select --install
   echo "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)" ; hash -r
+  eval "$(/opt/homebrew/bin/brew shellenv || /usr/local/bin/brew shellenv)" ; hash -r
   echo "Installing Google Drive Desktop - login after installed, then follow additional prompts"
   brew install --cask google-drive
   echo -e "\n\nOpen Finder -> Google Drive Desktop.\nSet 'My Drive/computer_sync' to 'Available offline':\n\n"
@@ -174,7 +174,7 @@ main () {
   read -p 'To allow `brew` to install from the Apple App Store using `mas` sign in to the App Store then hit [Return]'
 
   echo "Installing software from Homebrew"
-  brew bundle --file="${HOME}/Brewfile"
+  ${BREWPREFIX}/brew bundle --file="${HOME}/Brewfile"
 
   echo 'Add ${BREWPREFIX}/bin/zsh to /etc/shells (may ask for password to `sudo`)'
   echo '${BREWPREFIX}/bin/zsh' >> /etc/shells || echo '${BREWPREFIX}/bin/zsh' | sudo tee -a /etc/shells
