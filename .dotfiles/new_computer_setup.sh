@@ -33,7 +33,7 @@ install_prereq() {
 
 install_dotfiles() {
   # test if dotfiles are already setup else setup
-  if [[ -d ${HOME}/.dotfiles ]] && command -v dotfiles > /dev/null ; then
+  if [[ -d "${HOME}/.dotfiles" ]] && command -v dotfiles > /dev/null ; then
     echo "dotfiles repo already set"
   else
     echo "setting up dotfiles repo"
@@ -65,9 +65,9 @@ main () {
      install_prereq "$@" ;;
   esac
 
-  cd ${HOME}
+  cd "${HOME}"
 
-  if [[ -d  ${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync ]]; then
+  if [[ -d  "${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync" ]]; then
     CLOUDSYNCDIR="${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync"
   else
     read -p "Enter full path to Google Drive sync directory" CLOUDSYNCDIR
@@ -140,8 +140,8 @@ main () {
 
   ## Now syncs w/ Google Drive
   echo "Removing ${HOME}/Libary/Services, ${HOME}/Library/Scripts to symlink"
-  sudo rmdir Library/Services
-  sudo rmdir Library/Scripts
+  sudo rmdir "${HOME}Library/Services"
+  sudo rmdir "${HOME}Library/Scripts"
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
   echo 'Setting up "CLOUDSYNCDIR" symlinks'
