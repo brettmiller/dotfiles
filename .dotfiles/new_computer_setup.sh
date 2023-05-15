@@ -65,7 +65,7 @@ main () {
      install_prereq "$@" ;;
   esac
 
-  cd $HOME
+  cd ${HOME}
 
   if [[ -d  ${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync ]]; then
     CLOUDSYNCDIR="${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync"
@@ -73,7 +73,7 @@ main () {
     read -p "Enter full path to Google Drive sync directory" CLOUDSYNCDIR
   fi
 
-  mkdir ${HOME}/tmp
+  mkdir "${HOME}/tmp"
 
   echo "Setting up some MacOS preferences"
   # set/change defaults and flags
@@ -145,12 +145,12 @@ main () {
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
   echo 'Setting up "CLOUDSYNCDIR" symlinks'
-  ln -s ${CLOUDSYNCDIR}/shared/bin ${HOME}/bin
-  ln -s ${CLOUDSYNCDIR}/shared/scripts ${HOME}/scripts
-  ln -s ${CLOUDSYNCDIR}/shared/scripts_saved ${HOME}/scripts_saved
-  ln -s ${CLOUDSYNCDIR}/mac/Libary/Services ${HOME}/Library/Services
-  ln -s ${CLOUDSYNCDIR}/mac/Libary/Scripts ${HOME}/Library/Scripts
-  ln -s ${CLOUDSYNCDIR}/mac/Libary/Application\ Support/Quicksilver ${HOME}/Library/Application\ Support/Quicksilver
+  ln -s "${CLOUDSYNCDIR}/shared/bin" "${HOME}/bin"
+  ln -s "${CLOUDSYNCDIR}/shared/scripts" "${HOME}/scripts"
+  ln -s "${CLOUDSYNCDIR}/shared/scripts_saved" "${HOME}/scripts_saved"
+  ln -s "${CLOUDSYNCDIR}/mac/Libary/Services" "${HOME}/Library/Services"
+  ln -s "${CLOUDSYNCDIR}/mac/Libary/Scripts" "${HOME}/Library/Scripts"
+  ln -s "${CLOUDSYNCDIR}/mac/Libary/Application\ Support/Quicksilver" "${HOME}/Library/Application\ Support/Quicksilver"
   #ln -s ${CLOUDSYNCDIR}/Notational_Data_work ${HOME}/notes
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/Brewfile ${HOME}/Brewfile
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.gitconfig ${HOME}/.gitconfig
@@ -164,22 +164,23 @@ main () {
   #echo "Setting up shell config"
   #for dir in ${DROPBOXDIR}/work_mac/shell/.* ; do ln -ihFs ${dir} ${HOME}/$(basename ${dir}) ; done
 
+  BREWPREFIX=$(brew --prefix)
   echo "Setting permission to keep zsh from warning about insecure dirs"
-  chmod 755 /usr/local/share/ /usr/local/share/zsh /usr/local/share/zsh/site-functions
+  chmod 755 ${BREWPREFIX}/share/ ${BREWPREFIX}/share/zsh ${BREWPREFIX}/share/zsh/site-functions
 
   echo "Setting up ~/code base directories"
-  mkdir -p ${HOME}/code/bitbucket.org/vstinf ${HOME}/code/github.com/{vitalsource,verba,GoogleCloudPlatform,brettmiller,other,icg}
+  mkdir -p "${HOME}/code/bitbucket.org/vstinf" "${HOME}/code/github.com/{vitalsource,verba,GoogleCloudPlatform,brettmiller,other,icg}"
 
   read -p 'To allow `brew` to install from the Apple App Store using `mas` sign in to the App Store then hit [Return]'
 
   echo "Installing software from Homebrew"
-  brew bundle --file=${HOME}/Brewfile
+  brew bundle --file="${HOME}/Brewfile"
 
-  echo 'Add /usr/local/bin/zsh to /etc/shells (may ask for password to `sudo`)'
-  echo '/usr/local/bin/zsh' >> /etc/shells || echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells
+  echo 'Add ${BREWPREFIX}/bin/zsh to /etc/shells (may ask for password to `sudo`)'
+  echo '${BREWPREFIX}/bin/zsh' >> /etc/shells || echo '${BREWPREFIX}/bin/zsh' | sudo tee -a /etc/shells
 
-  echo "Making /usr/local/bin/zsh user's default shell"
-  chsh -s /usr/local/bin/zsh
+  echo "Making ${BREWPREFIX}/bin/zsh user's default shell"
+  chsh -s ${BREWPREFIX}/bin/zsh
 
   # VS Code:
   # install VS Code sync extension !!disabled - config syncing is now built into VS code!!
@@ -188,7 +189,7 @@ main () {
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
   echo "Cloning 'kyrat'"
-  cd ${HOME}/code/github.com/other
+  cd "${HOME}/code/github.com/other"
   git clone git@github.com:fsquillace/kyrat.git
   cd -
   echo ""
