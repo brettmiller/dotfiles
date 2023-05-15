@@ -12,19 +12,20 @@ install_prereq() {
   echo "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   eval "$(/opt/homebrew/bin/brew shellenv)" ; hash -r
-  echo "Installing Google Drive Desktop"
+  echo "Installing Google Drive Desktop - login after installed, then follow additional prompts"
   brew install --cask google-drive
-  echo -e "\n\nOpen and configure Google Drive Desktop.\nDirectories to sync:\n\n"
-  echo '
-    ${HOME}/scripts ${HOME}/scripts
-    ${HOME}/scripts_saved ${HOME}/scripts_saved
-    ${HOME}/Library/Application\ Support/Quicksilver
-    ${HOME}/bin
-    ${HOME}/Library/Services
-    ${HOME}/Documents
-    ?? ${HOME}/Notational_Data_work ${HOME}/notes ??
+  echo -e "\n\nOpen Finder -> Google Drive Desktop.\nSet 'My Drive/computer_sync' to 'Available offline':\n\n"
+  #echo '
+  #  ${HOME}/scripts ${HOME}/scripts
+  #  ${HOME}/scripts_saved ${HOME}/scripts_saved
+  #  ${HOME}/Library/Application\ Support/Quicksilver
+  #  ${HOME}/bin
+  #  ${HOME}/Library/Services
+  #  ${HOME}/Library/Scripts
+  #  ${HOME}/Documents
+  #  ?? ${HOME}/Notational_Data_work ${HOME}/notes ??
+  #  '
 
-    '
   read -p "hit "Enter" to continue"
   echo -n "Test for/setup dotfiles repo: "
   install_dotfiles
@@ -66,11 +67,11 @@ main () {
 
   cd $HOME
 
-  #if [[ -d ${HOME}/Dropbox ]]; then
-  #  DROPBOXDIR="${HOME}/Dropbox"
-  #else
-  #  read -p "Enter full path to Dropbox directory" DROPBOXDIR
-  #fi
+  if [[ -d  ${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync ]]; then
+    CLOUDSYNCDIR="${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync"
+  else
+    read -p "Enter full path to Google Drive sync directory" CLOUDSYNCDIR
+  fi
 
   mkdir ${HOME}/tmp
 
@@ -138,21 +139,23 @@ main () {
   done
 
   ## Now syncs w/ Google Drive
-  #echo "Removing Libary/Services to symlink"
-  #sudo rmdir Library/Services
+  echo "Removing ${HOME}/Libary/Services, ${HOME}/Library/Scripts to symlink"
+  sudo rmdir Library/Services
+  sudo rmdir Library/Scripts
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
-  #echo 'Setting Dropbox symlinks'
-  #ln -s ${DROPBOXDIR}/scripts ${HOME}/scripts
-  #ln -s ${DROPBOXDIR}/scripts_saved ${HOME}/scripts_saved
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/Libary/Application\ Support/Quicksilver ${HOME}/Library/Application\ Support/Quicksilver
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/bin ${HOME}/bin
-  #ln -s ${DROPBOXDIR}/Notational_Data_work ${HOME}/notes
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/Libary/Services ${HOME}/Library/Services
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/Brewfile ${HOME}/Brewfile
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/.gitconfig ${HOME}/.gitconfig
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/.vimrc ${HOME}/.vimrc
-  #ln -s ${DROPBOXDIR}/work_mac/home_dir/.vim ${HOME}/.vim
+  echo 'Setting up "CLOUDSYNCDIR" symlinks'
+  ln -s ${CLOUDSYNCDIR}/shared/bin ${HOME}/bin
+  ln -s ${CLOUDSYNCDIR}/shared/scripts ${HOME}/scripts
+  ln -s ${CLOUDSYNCDIR}/shared/scripts_saved ${HOME}/scripts_saved
+  ln -s ${CLOUDSYNCDIR}/mac/Libary/Services ${HOME}/Library/Services
+  ln -s ${CLOUDSYNCDIR}/mac/Libary/Scripts ${HOME}/Library/Scripts
+  ln -s ${CLOUDSYNCDIR}/mac/Libary/Application\ Support/Quicksilver ${HOME}/Library/Application\ Support/Quicksilver
+  #ln -s ${CLOUDSYNCDIR}/Notational_Data_work ${HOME}/notes
+  #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/Brewfile ${HOME}/Brewfile
+  #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.gitconfig ${HOME}/.gitconfig
+  #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.vimrc ${HOME}/.vimrc
+  #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.vim ${HOME}/.vim
 
   # needed configs(that aren't privacy concern) are in dotfiles repo
   #echo "Settina up ~/.config"
@@ -191,11 +194,12 @@ main () {
   echo ""
 
   echo "Remember - copy ssh keys (from 1password/lastpass/old computer) and/or setup 1Password ssh agent"
-  echo "Remember - setup/clone VRSE"
+  echo "Remember - setup/clone VRSE & inf-tools"
   echo "Remember - copy shell history?"
   #echo "Remember - move ~/Documents/ from old computer (reconfigure syncing w/ Google Backup and Sync)"
   echo "Remember - configure VS Code syncing"
   echo "Remember - configure Jopin sync"
+  echo "Remember - copy ~/Documents/"
   echo -e "\n\n**Remember: Copy any 'private' shell rc directories**\n\n"
   #echo -e "\n\nSetup: \n Amphetamine \n Ethernet Status Lite \n Install: Outlook (https://portal.office.com/account) \n "
   echo -e "\n\nSetup: \n Amphetamine \n Install: Outlook (https://portal.office.com/account) \n "
