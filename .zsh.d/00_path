@@ -2,10 +2,16 @@
 # keep things more consistent across systems
 PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
+# If we're on MacOS and Homebrew is installed setup PATHs
+if [[ $(uname -s) == Darwin && -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # If we're on linux and Homebrew is installed setup PATHs
 if [[ $(uname -s) == Linux && -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
 
 # ------ OTHER PATHS -------
 
