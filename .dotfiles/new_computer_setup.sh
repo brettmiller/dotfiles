@@ -191,6 +191,7 @@ main () {
 
   echo "Remember - copy ssh keys (from 1password/lastpass/old computer) and/or setup 1Password ssh agent"
   echo "Remember - setup/clone VRSE"
+  echo "Remember - copy shell history?"
   #echo "Remember - move ~/Documents/ from old computer (reconfigure syncing w/ Google Backup and Sync)"
   echo "Remember - configure VS Code syncing"
   echo "Remember - configure Jopin sync"
