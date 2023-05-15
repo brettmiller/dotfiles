@@ -67,8 +67,8 @@ main () {
 
   cd "${HOME}"
 
-  if [[ -d  "${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync" ]]; then
-    CLOUDSYNCDIR="${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My\ Drive/computer_sync"
+  if [[ -d  "${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My Drive/computer_sync" ]]; then
+    CLOUDSYNCDIR="${HOME}/Library/CloudStorage/GoogleDrive-brett@shadowed.net/My Drive/computer_sync"
   else
     read -p "Enter full path to Google Drive sync directory" CLOUDSYNCDIR
   fi
