@@ -138,10 +138,10 @@ main () {
     killall "${app}" > /dev/null 2>&1
   done
 
-  ## Now syncs w/ Google Drive
+  ## Now syncs w/ Google Drive - remove and symlink (and handle previously symlinked)
   echo "Removing ${HOME}/Libary/Services, ${HOME}/Library/Scripts to symlink"
-  sudo rmdir "${HOME}Library/Services"
-  sudo rmdir "${HOME}Library/Scripts"
+  sudo rmdir "${HOME}/Library/Services" || rm "${HOME}/Library/Services"
+  sudo rmdir "${HOME}/Library/Scripts" || rm "${HOME}/Library/Scripts"
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
   echo 'Setting up "CLOUDSYNCDIR" symlinks'
@@ -150,7 +150,7 @@ main () {
   ln -s "${CLOUDSYNCDIR}/shared/scripts_saved" "${HOME}/scripts_saved"
   ln -s "${CLOUDSYNCDIR}/mac/Libary/Services" "${HOME}/Library/Services"
   ln -s "${CLOUDSYNCDIR}/mac/Libary/Scripts" "${HOME}/Library/Scripts"
-  ln -s "${CLOUDSYNCDIR}/mac/Libary/Application\ Support/Quicksilver" "${HOME}/Library/Application\ Support/Quicksilver"
+  ln -s "${CLOUDSYNCDIR}/mac/Libary/Application Support/Quicksilver" "${HOME}/Library/Application Support/Quicksilver"
   #ln -s ${CLOUDSYNCDIR}/Notational_Data_work ${HOME}/notes
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/Brewfile ${HOME}/Brewfile
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.gitconfig ${HOME}/.gitconfig
