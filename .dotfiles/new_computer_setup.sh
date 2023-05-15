@@ -11,9 +11,9 @@ install_prereq() {
   xcode-select --install
   echo "Installing Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)" ; hash -f
+  eval "$(/opt/homebrew/bin/brew shellenv)" ; hash -r
   echo "Installing Google Drive Desktop"
-  brew cask install google-drive
+  brew install --cask google-drive
   echo -e "\n\nOpen and configure Google Drive Desktop.\nDirectories to sync:\n\n"
   echo '
     ${HOME}/scripts ${HOME}/scripts
