@@ -185,6 +185,9 @@ main () {
   #echo "Setting up shell config"
   #for dir in ${DROPBOXDIR}/work_mac/shell/.* ; do ln -ihFs ${dir} ${HOME}/$(basename ${dir}) ; done
 
+  echo "Installing Rosetta 2 (required by some apps installed via Homebrew)"
+  sudo softwareupdate --install-rosetta
+
   BREWPREFIX=$(/opt/homebrew/bin/brew --prefix || /usr/local/bin/brew --prefix )
   echo "Setting permission to keep zsh from warning about insecure dirs"
   chmod 755 ${BREWPREFIX}/share/ ${BREWPREFIX}/share/zsh ${BREWPREFIX}/share/zsh/site-functions
