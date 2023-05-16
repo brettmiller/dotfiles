@@ -41,6 +41,22 @@ install_dotfiles() {
   fi
 }
 
+1pass_ssh_agent () {
+  while [ ! "$agent_choice" == "y" -a ! "$agent_choice" == "n" ]; do
+    read -p 'Setup 1Password ssh agent? y/n' agent_choice
+  done
+
+  case $agent_choice in
+    y)
+      read -p $'Enable SSH Agent in 1Password: \nhttps://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent\n\nHit enter to continue '
+      mkdir -p ~/.1password && ln -s "${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "${HOME}/.1password/agent.sock"
+      export export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
+      ;;
+   *)
+     echo 'Not setting up 1Password SSH Agent'
+     ;;
+  esac
+}
 
 main () {
   echo ""
@@ -144,6 +160,11 @@ main () {
   sudo rmdir "${HOME}/Library/Scripts" || rm "${HOME}/Library/Scripts"
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
+  echo "Attempting to remove existing symlinks to '$CLOUDSYNCDIR/...' so we don't create <linkname>/<linkname>"
+  for DIR in "${HOME}/bin" "${HOME}/scripts" "${HOME}/scripts_saved" "${HOME}/Library/Application Support/Quicksilver"; do
+    rm "${DIR}"
+  done
+
   echo 'Setting up "CLOUDSYNCDIR" symlinks'
   ln -s "${CLOUDSYNCDIR}/shared/bin" "${HOME}/bin"
   ln -s "${CLOUDSYNCDIR}/shared/scripts" "${HOME}/scripts"
@@ -169,7 +190,7 @@ main () {
   chmod 755 ${BREWPREFIX}/share/ ${BREWPREFIX}/share/zsh ${BREWPREFIX}/share/zsh/site-functions
 
   echo "Setting up ~/code base directories"
-  mkdir -p "${HOME}/code/bitbucket.org/vstinf" "${HOME}/code/github.com/{vitalsource,verba,GoogleCloudPlatform,brettmiller,other,icg}"
+  mkdir -p "${HOME}/code/bitbucket.org/vstinf" "${HOME}"/code/github.com/{vitalsource,verba,GoogleCloudPlatform,brettmiller,other,icg}
 
   read -p 'To allow `brew` to install from the Apple App Store using `mas` sign in to the App Store then hit [Return]'
 
@@ -188,6 +209,9 @@ main () {
   # enable key-repeating
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+  # enable 1Password's ssh agent?
+  1pass_ssh_agent
+
   echo "Cloning 'kyrat'"
   cd "${HOME}/code/github.com/other"
   git clone git@github.com:fsquillace/kyrat.git
@@ -195,22 +219,23 @@ main () {
   echo ""
 
   echo "Remember - copy ssh keys (from 1password/lastpass/old computer) and/or setup 1Password ssh agent"
+  echo "Remember - copy ssh config(s)"
   echo "Remember - setup/clone VRSE & inf-tools"
   echo "Remember - copy shell history?"
   #echo "Remember - move ~/Documents/ from old computer (reconfigure syncing w/ Google Backup and Sync)"
   echo "Remember - configure VS Code syncing"
   echo "Remember - configure Jopin sync"
   echo "Remember - copy ~/Documents/"
-  echo -e "\n\n**Remember: Copy any 'private' shell rc directories**\n\n"
+  echo -e "\n\n**Remember: Copy any 'private' shell rc directories**\n"
   #echo -e "\n\nSetup: \n Amphetamine \n Ethernet Status Lite \n Install: Outlook (https://portal.office.com/account) \n "
   echo -e "\n\nSetup: \n Amphetamine \n Install: Outlook (https://portal.office.com/account) \n "
+
+  # set Chrome as default browser (open in background)
+  open -ga "Google Chrome" --args --make-default-browser
 
   # gcloud get user credentials to use for ADC
   echo "gcloud auth adc"
   gcloud auth application-default login
-
-  # set Chrome as default browser
-  open -a "Google Chrome" --args --make-default-browser
 
 }
 
