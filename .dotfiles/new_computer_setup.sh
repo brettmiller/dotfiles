@@ -242,6 +242,7 @@ main () {
   echo "gcloud auth adc"
   gcloud auth application-default login
 
+  echo -e'\n\nSetup complete.'
 }
 
 main "$@"
