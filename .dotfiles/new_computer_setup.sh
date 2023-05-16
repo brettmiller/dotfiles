@@ -43,7 +43,7 @@ install_dotfiles() {
 
 1pass_ssh_agent () {
   while [ ! "$agent_choice" == "y" -a ! "$agent_choice" == "n" ]; do
-    read -p 'Setup 1Password ssh agent? y/n' agent_choice
+    read -p 'Setup 1Password ssh agent, y/n? ' agent_choice
   done
 
   case $agent_choice in
