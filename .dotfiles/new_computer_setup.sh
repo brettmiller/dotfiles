@@ -50,7 +50,7 @@ install_dotfiles() {
     y)
       read -p $'Enable SSH Agent in 1Password: \nhttps://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent\n\nHit enter to continue '
       mkdir -p ~/.1password && ln -s "${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "${HOME}/.1password/agent.sock"
-      export export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
+      export SSH_AUTH_SOCK="${HOME}/.1password/agent.sock"
       ;;
    *)
      echo 'Not setting up 1Password SSH Agent'
