@@ -210,6 +210,13 @@ main () {
   echo "Making ${BREWPREFIX}/bin/zsh user's default shell"
   chsh -s ${BREWPREFIX}/bin/zsh
 
+  # iTerm2
+  # Specify the preferences directory
+  mkdir -p "${HOME}/.config/iterm2"
+  defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2"
+  # Tell iTerm2 to use the custom preferences in the directory
+  defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
   # VS Code:
   # install VS Code sync extension !!disabled - config syncing is now built into VS code!!
   # /usr/local/bin/code --install-extension shan.code-settings-sync
