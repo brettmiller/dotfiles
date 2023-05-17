@@ -93,6 +93,8 @@ main () {
 
   echo "Setting up some MacOS preferences"
   # set/change defaults and flags
+  # Enable "keyboard navigation", tab between all controls not just text boxes and lists
+  defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
   # Show Hidden files
   defaults write com.apple.finder AppleShowAllFiles -bool true
   # System Preferences > Dock > Magnification:
