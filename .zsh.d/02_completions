@@ -1,8 +1,8 @@
-fpath=($(brew --prefix 2>/dev/null)/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
+fpath=(${HOMEBREW_PREFIX}/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
 
 # completions from Homebrew installed commands
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=${HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH
 fi
 
 # don't expand aliases _before_ completion has finished

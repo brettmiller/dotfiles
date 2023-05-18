@@ -3,17 +3,17 @@
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob '!.git/*'"
 export FZF_TMUX_HEIGHT='50%'
 
-if command -v brew >/dev/null && [[ ! "$PATH" == *$(brew --prefix)/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}$(brew --prefix)/opt/fzf/bin"
+if command -v brew >/dev/null && [[ ! "$PATH" == *${HOMEBREW_PREFIX}/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}${HOMEBREW_PREFIX}/opt/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && command -v brew >/dev/null && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && command -v brew >/dev/null && source "${HOMEBREW_PREFIX}/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-if command -v brew >/dev/null &&  [[ -f $(brew --prefix)/opt/fzf/shell/key-bindings.zsh ]]; then
-  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+if command -v brew >/dev/null &&  [[ -f ${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh ]]; then
+  source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
 fi
 
