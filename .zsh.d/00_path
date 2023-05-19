@@ -32,7 +32,7 @@ fi
 
 # Brew curl
 if [[ -d ${HOMEBREW_PREFIX}/opt/curl/bin ]]; then
-  export PATH="${HOMEBREW_PREFIX}/opt/cur/bin:$PATH"
+  export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:$PATH"
 fi
 
 # Add java/openjdk path

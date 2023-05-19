@@ -12,7 +12,6 @@ brew "svn" # needed by some of the font casks because they set "using: svn" 🤦
 brew "colima"
 brew "coreutils"
 brew "kubernetes-cli"
-brew "krew"
 brew "berglas"
 brew "stern"
 brew "socat"
