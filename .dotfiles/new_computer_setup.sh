@@ -174,7 +174,7 @@ main () {
   ln -s "${CLOUDSYNCDIR}/mac/Libary/Services" "${HOME}/Library/Services"
   ln -s "${CLOUDSYNCDIR}/mac/Libary/Scripts" "${HOME}/Library/Scripts"
   ln -s "${CLOUDSYNCDIR}/mac/Libary/Application Support/Quicksilver" "${HOME}/Library/Application Support/Quicksilver"
-  ln -s "${CLOUDSYNCDIR}/mac/Libary/Preferences/" "${HOME}/Library/Preferences/com.blacktree.Quicksilver.plist"
+  ln -s "${CLOUDSYNCDIR}/mac/Libary/Preferences/com.blacktree.Quicksilver.plist" "${HOME}/Library/Preferences/com.blacktree.Quicksilver.plist"
   #ln -s ${CLOUDSYNCDIR}/Notational_Data_work ${HOME}/notes
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/Brewfile ${HOME}/Brewfile
   #ln -s ${CLOUDSYNCDIR}/work_mac/home_dir/.gitconfig ${HOME}/.gitconfig
