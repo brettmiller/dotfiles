@@ -163,7 +163,7 @@ main () {
 
   ## Now using Google Drive Desktop for syncing outside of git dotfiles repo
   echo "Attempting to remove existing symlinks to '$CLOUDSYNCDIR/...' so we don't create <linkname>/<linkname>"
-  for DIR in "${HOME}/bin" "${HOME}/scripts" "${HOME}/scripts_saved" "${HOME}/Library/Application Support/Quicksilver"; do
+  for DIR in "${HOME}/bin" "${HOME}/scripts" "${HOME}/scripts_saved" "${HOME}/Library/Application Support/Quicksilver" "${HOME}/Library/Preferences/com.blacktree.Quicksilver.plist"; do
     rm "${DIR}"
   done
 
