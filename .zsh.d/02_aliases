@@ -5,7 +5,7 @@ alias get='git'
 # use python3 & pip3 when calling python w/o a version
 alias python='python3'
 alias pip='pip3'
-if which python3 | grep -q '/usr/local/bin' ; then
+if which python3 | grep -q '${HOMEBREW_PREFIX}/bin' ; then
 	alias pip3='python3 -m pip'
 fi
 alias gw='open $(git web-url)' # open current git repo url in browser
@@ -25,7 +25,7 @@ alias podmec='cpodme'
 alias brewbundle='brew bundle install --file=$"{HOME}/Brewfile"'
 alias bbi='brew bundle install --file="${HOME}/Brewfile"'
 alias git-root='git rev-parse && cd "$(git rev-parse --show-cdup)"'
-alias mysql='/usr/local/opt/mysql-client/bin/mysql'
+alias mysql='${HOMEBREW_PREFIX}/opt/mysql-client/bin/mysql'
 alias srl='exec $SHELL -l'
 alias vstpaste="HASTE_SERVER=https://pastebin.vitalsource.com haste"
 # show all shell function, minus the _<NAME> functions that are (mostly?) for completions

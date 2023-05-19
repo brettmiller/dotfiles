@@ -9,7 +9,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 _kube_prompt() {
   if [[ ! -z $KUBEENV ]]; then
-    CURRENT_NAMESPACE=$(/usr/local/bin/kubectl config view --minify --output 'jsonpath={..namespace}'|| echo '_')
+    CURRENT_NAMESPACE=$(${HOMEBREW_PREFIX}/bin/kubectl config view --minify --output 'jsonpath={..namespace}'|| echo '_')
     #echo "%F{124}"${CURRENT_NAMESPACE}"%F{118}"@"%F{117}"${KUBEENV}"%F{255}"
     ## Prompt with "(namespace@cluster_context)"
     #echo "(%F{cyan}"${CURRENT_NAMESPACE}"%f"@"%F{blue}"${KUBEENV}"%f) "

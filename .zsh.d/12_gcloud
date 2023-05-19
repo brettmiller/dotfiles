@@ -4,22 +4,22 @@ if [[ -d ${HOME}/google-cloud-sdk ]]; then
   source ${HOME}/google-cloud-sdk/completion.zsh.inc
   PATH=$PATH:$HOME/google-cloud-sdk/bin # add to path
 fi
-if [[ -d /usr/local/Caskroom/google-cloud-sdk ]] ; then
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-  source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+if [[ -d ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk ]] ; then
+  source "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
-if command -v gcloud >/dev/null 2>&1 ; then 
+if command -v gcloud >/dev/null 2>&1 ; then
   export CLOUDSDK_PYTHON_SITEPACKAGES=1 # allow gcloud to access external packages. w/ numpy increases gcloud ssh iap tunnel performance
 fi
 
-gcp_completion=("${HOME}/google-cloud-sdk/completion.bash.inc" "/usr/lib64/google-cloud-sdk/completion.bash.inc" "/usr/share/google-cloud-sdk/completion.bash.inc" "/usr/local/share/google/google-cloud-sdk/completion.bash.inc" )
+gcp_completion=("${HOME}/google-cloud-sdk/completion.bash.inc" "/usr/lib64/google-cloud-sdk/completion.bash.inc" "/usr/share/google-cloud-sdk/completion.bash.inc" "${HOMEBREW_PREFIX}/share/google/google-cloud-sdk/completion.bash.inc" )
 
 for file in ${gcp_completion[@]}; do
   [[ -r $file ]] && source $file
 done
 
-# enable fzf ** completion for instances(name + zone) 
+# enable fzf ** completion for instances(name + zone)
 _fzf_complete_gcloud() {
   ARGS="$@"
   local machines

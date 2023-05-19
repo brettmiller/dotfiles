@@ -38,7 +38,7 @@ if command -v berglas >/dev/null ; then
 fi
 
 # terraform
-complete -o nospace -C /usr/local/bin/terraform terraform
+complete -o nospace -C ${HOMEBREW_PREFIX}/bin/terraform terraform
 
 # generated with `pip3 completion --zsh`
 if command -v pip3 --version > /dev/null ; then
@@ -78,5 +78,5 @@ fi
 
 # aws cli completions
 if command -v aws_completer > /dev/null ; then
- complete -C '/usr/local/bin/aws_completer' aws
+ complete -C '${HOMEBREW_PREFIX}/bin/aws_completer' aws
 fi

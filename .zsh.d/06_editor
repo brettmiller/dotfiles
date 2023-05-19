@@ -1,5 +1,5 @@
-if [[ -x /usr/local/bin/vim ]]; then
-  EDITOR="/usr/local/bin/vim"
+if [[ -x ${HOMEBREW_PREFIX}/bin/vim ]]; then
+  EDITOR="${HOMEBREW_PREFIX}/bin/vim"
 else
   EDITOR="/usr/bin/vim"
 fi
