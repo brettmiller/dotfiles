@@ -65,3 +65,9 @@ if [[ -d $HOME/code/github.com/other/kyrat/bin/ ]]; then
   export PATH="$PATH:$HOME/code/github.com/other/kyrat/bin"
 fi
 
+# Snowflake SnowSQL - snowsqsl
+# Snowflake adds the exports to ~/.zshrc w/ $PATH at the end
+if [[ -d /Applications/SnowSQL.app/Contents/MacOS ]]; then
+  export PATH="$PATH:/Applications/SnowSQL.app/Contents/MacOS"
+fi
+
