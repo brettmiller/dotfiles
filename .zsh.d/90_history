@@ -1,5 +1,10 @@
 # put history settings last so they override OMZ
 export HISTFILE=~/.zsh_history
+# Timestamp - you can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+export HIST_STAMPS="yyyy-mm-dd"
 export HISTSIZE=500000
 export SAVEHIST=500000
 

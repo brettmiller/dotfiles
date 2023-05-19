@@ -1,3 +1,8 @@
+# These get overridded later, but setting early in case something between
+# is setting and causing my truncation issues
+export HISTSIZE=500000
+export SAVEHIST=500000
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 

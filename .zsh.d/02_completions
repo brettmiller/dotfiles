@@ -1,5 +1,7 @@
 fpath=(${HOMEBREW_PREFIX}/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
 
+mkdir -p ${HOME}/.zsh.d/zsh-completions
+
 # completions from Homebrew installed commands
 if type brew &>/dev/null; then
   FPATH=${HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH
