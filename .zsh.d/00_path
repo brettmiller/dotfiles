@@ -3,8 +3,8 @@
 PATH=$HOME/bin:${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 # If we're on MacOS and Homebrew is installed setup PATHs
-if [[ $(uname -s) == Darwin && -x /opt/homebrew/bin/brew || -x ${HOMEBREW_PREFIX}/bin/brew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || ${HOMEBREW_PREFIX}/bin/brew shellenv)"
+if [[ $(uname -s) == Darwin && -x /opt/homebrew/bin/brew || -x /usr/local/Homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/Homebrew/bin/brew shellenv)"
 fi
 
 # If we're on linux and Homebrew is installed setup PATHs
