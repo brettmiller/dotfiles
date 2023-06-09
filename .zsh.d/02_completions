@@ -49,7 +49,7 @@ fi
 
 # 1password-cli completions
 if command -v op >/dev/null ; then
-  source <(op completion zsh)
+  op completion zsh > ${HOME}/.zsh.d/zsh-completions/_op
   compdef _op op
 fi
 
