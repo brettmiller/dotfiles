@@ -58,4 +58,4 @@ fi
 
 # aliases
 # Start python http server (optionally pass port to listen on, default is 8000)
-alias webshare='python -m SimpleHTTPServer $1'
+alias webshare='python3 -m http.server $1'
