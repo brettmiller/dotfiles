@@ -102,6 +102,7 @@ cask "font-source-code-pro-for-powerline"
 mas "Yubico Authenticator", id: 1497506650
 mas "Amphetamine", id: 937984704
 mas "1Password for Safari", id: 1569813296
+mas "subnetcalc", id: 412946682
 #mas "Ethernet Status Lite", id: 1227616292
 # Xcode takes a LONG time to install, so maybe don't do it here.
 #mas "Xcode", id: 497799835
