@@ -22,7 +22,7 @@ if [[ -z $SSH_CONNECTION ]] && command -v kyrat >/dev/null 2>&1; then
 fi
 
 # attempt to disable kyrat if we've got our dotiles from git
-if ps aux | grep -q kyrat && [[ -n $SSH_CONNECTION ]] && [[ -d ${HOME}/.dotfiles ]]; then
+if ps aux | grep -q kyra[t] && [[ -n $SSH_CONNECTION ]] && [[ -d ${HOME}/.dotfiles ]]; then
   rm -rf $KYRAT_HOME
   echo "************RESTARTING SHELL*************"
   exec $SHELL -i
