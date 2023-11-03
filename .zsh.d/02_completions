@@ -53,6 +53,10 @@ if command -v op >/dev/null ; then
   compdef _op op
 fi
 
+if command -v glow >/dev/null; then
+  glow completion zsh >"${HOME}/.zsh.d/zsh-completions/_glow"
+fi
+
 # bash completions - allow bash completions to work and load some w/o zsh equivalents
 autoload bashcompinit
 bashcompinit
