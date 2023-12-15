@@ -4,10 +4,10 @@ if [[ ! -n $SSH_CONNECTION  ]]; then
   #KEYLIST=`ls ~/.ssh/id_!(*.pub)`
   KEYLIST=$(ls ~/.ssh/id_* ~/.ssh/google_compute_engine 2>/dev/null | grep -v \.pub)
   AGENTKEYS=$(/usr/bin/ssh-add -l)
-  
+
   for KEY in `echo $KEYLIST` ; do
       #ssh-add -l | grep -q $KEY || ssh-add -k $KEY
-      echo $AGENTKEYS| grep -q $KEY || /usr/bin/ssh-add -K $KEY
+      echo $AGENTKEYS| grep -q $KEY || /usr/bin/ssh-add --apple-use-keychain $KEY
   done
 
 fi
