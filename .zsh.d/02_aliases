@@ -41,10 +41,10 @@ alias k='kubectl'
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
 	#alias ls='ls --color=auto'
-	if $(ls --color >/dev/null 2>&1) ; then
-		alias ls='ls --color'
+	if $(ls --color=auto >/dev/null 2>&1) ; then
+		alias ls='ls --color=auto'
 	fi
-	if [ $(uname -s) = "Darwin" ] ; then
+	if [[ $(uname -s) = "Darwin" ]] && [[ ! $(ls --help | grep GNU ) ]] ; then
 		alias ls='ls -G'
 	fi
 	#alias dir='ls -G --format=vertical'
