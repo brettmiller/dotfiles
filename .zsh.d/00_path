@@ -15,6 +15,26 @@ fi
 
 # ------ OTHER PATHS -------
 
+# brew GNU grep
+if [[ -d ${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin ]]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
+fi
+
+# brew GNU Sed
+if [[ -d ${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin ]]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+fi
+
+# brew GNU find
+if [[ -d ${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin ]]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
+fi
+
+# brew GNU coreutils  (cat,dd,echo,date,pwd,..)
+if [[ -d ${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin ]]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+fi
+
 # vst-terrafom/bin path
 if [[ -d $HOME/code/github.com/vitalsource/vst-terraform/bin ]]; then
   export PATH=$PATH:$HOME/code/github.com/vitalsource/vst-terraform/bin
@@ -38,21 +58,6 @@ fi
 # Add java/openjdk path
 if [[ -d ${HOMEBREW_PREFIX}/opt/openjdk/bin ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/openjdk/bin:$PATH"
-fi
-
-# brew GNU grep
-if [[ -d ${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin ]]; then
-  export PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
-fi
-
-# brew GNU Sed
-if [[ -d ${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin ]]; then
-  export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
-fi
-
-# brew GNU find
-if [[ -d ${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin ]]; then
-  export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
 fi
 
 # avr-gcc (AVR microcontroller compiler and tools)
