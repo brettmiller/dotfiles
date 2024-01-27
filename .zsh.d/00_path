@@ -12,27 +12,30 @@ if [[ $(uname -s) == Linux && -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-
 # ------ OTHER PATHS -------
 
 # brew GNU grep
 if [[ -d ${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:$PATH"
+  export MANPATH="${HOMEBREW_PREFIX}/opt/grep/libexec/man:$MANPATH"
 fi
 
 # brew GNU Sed
 if [[ -d ${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
+  export MANPATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/man:$MANPATH"
 fi
 
 # brew GNU find
 if [[ -d ${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
+  export MANPATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/man:$MANPATH"
 fi
 
 # brew GNU coreutils  (cat,dd,echo,date,pwd,..)
 if [[ -d ${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin ]]; then
   export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/man:$MANPATH"
 fi
 
 # vst-terrafom/bin path
