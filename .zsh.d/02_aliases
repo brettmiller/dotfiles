@@ -42,7 +42,9 @@ alias k='kubectl'
 if [ "$TERM" != "dumb" ]; then
 	#alias ls='ls --color=auto'
 	if $(ls --color=auto >/dev/null 2>&1) ; then
-		alias ls='ls --color=auto'
+		# color and escape spaces
+		# (escape allows piping names w/ spaces,etc to other commands(ex. xargs) w/o breaking)
+		alias ls='ls --color=auto --escape'
 	fi
 	if [[ $(uname -s) = "Darwin" ]] && [[ ! $(ls --help | grep GNU ) ]] ; then
 		alias ls='ls -G'
