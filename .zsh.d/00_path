@@ -1,6 +1,6 @@
 # reset/force initial $PATH. This keeps us from getting the PATH from /etc/paths & /etc/paths.d and should
 # keep things more consistent across systems
-PATH=$HOME/bin:${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+PATH=$HOME/bin:${HOME}/.local/bin:${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 # If we're on MacOS and Homebrew is installed setup PATHs
 if [[ $(uname -s) == Darwin && -x /opt/homebrew/bin/brew || -x /usr/local/Homebrew/bin/brew ]]; then
