@@ -1,5 +1,8 @@
 fpath=(${HOMEBREW_PREFIX}/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
 
+# enables python argcomplete globally or by adding to fpath in ~/.zshenv if global fails
+( activate-global-python-argcomplete || activate-global-python-argcomplete --user --yes ) 2>/dev/null
+
 mkdir -p ${HOME}/.zsh.d/zsh-completions
 
 # completions from Homebrew installed commands
@@ -86,3 +89,4 @@ fi
 if command -v aws_completer > /dev/null ; then
  complete -C '${HOMEBREW_PREFIX}/bin/aws_completer' aws
 fi
+

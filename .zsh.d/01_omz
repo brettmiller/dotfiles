@@ -76,10 +76,10 @@ ZSH_CUSTOM="${HOME}/.zsh.d/omz-custom"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-# look at moving install of plugins to something line antigen, antibody, zplug, ? 
+# look at moving install of plugins to something line antigen, antibody, zplug, ?
 #plugins=(git git-prompt git-auto-fetch kubectl docker)
-# 2020-09-11 - removed kubectl plugin - doesn't update completions often enough and we've got our own set of aliases. 
-#plugins=(git git-prompt git-auto-fetch docker fzf-tab) # fzf-tab cloned in ~/.zsh.d/omz-custom/plugins
+# 2020-09-11 - removed kubectl plugin - doesn't update completions often enough and we've got our own set of aliases.
+#plugins=(git git-prompt git-auto-fetch docker asdf fzf-tab) # fzf-tab cloned in ~/.zsh.d/omz-custom/plugins
 plugins=(git git-prompt git-auto-fetch docker asdf)
 
 source ${ZSH}/oh-my-zsh.sh
