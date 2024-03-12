@@ -44,7 +44,9 @@
   s = status
   st = stash
   top = rev-parse --show-toplevel
-  dry-merge = "!d() { git merge-tree $(git merge-base $1 $2) $2 $1; }; d" #check merge w/o merging-https://stackoverflow.com/a/6283843
+  #check merge w/o merging - https://stackoverflow.com/a/6283843
+  merge-dry = "!f() { git merge-tree --merge-base $(git merge-base $1 $2) $1 $2; }; f"  # $1=base, $2=branch to merge
+  merge-dry-full = "!f() { git merge-tree $(git merge-base $1 $2) $1 $2; }; f" # $1=base, $2=branch to merge - https://stackoverflow.com/a/6283843
   # https://tekin.co.uk/2020/06/jump-from-a-git-commit-to-the-pr-in-one-command
   merge-commits = "!funct() { git log --merges --reverse --oneline --ancestry-path $1..origin | grep \"Merge pull request\"; }; funct"
   pr-number = "!funct() { git merge-commits $1 | head -n1 | sed -n \"s/^.*Merge pull request #\\\\s*\\\\([0-9]*\\\\).*$/\\\\1/p\"; }; funct"
