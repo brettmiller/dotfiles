@@ -84,6 +84,9 @@ if command -v ha >/dev/null ; then
   source <(ha completion zsh) && compdef _ha ha
 fi
 
+# esphome completions (requires python-argcomplete - `brew install python-argcomplete`)
+eval "$(register-python-argcomplete esphome)"
+
 
 # aws cli completions
 if command -v aws_completer > /dev/null ; then
