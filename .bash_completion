@@ -28,3 +28,7 @@ if [[ -d $EXTRA_BASH_COMPLETION_DIR && -r $EXTRA_BASH_COMPLETION_DIR && \
     done
 fi
 unset i
+
+# Begin added by argcomplete
+source "/opt/homebrew/lib/python3.12/site-packages/argcomplete/bash_completion.d/_python-argcomplete"
+# End added by argcomplete
