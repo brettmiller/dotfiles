@@ -85,8 +85,11 @@ if command -v ha >/dev/null ; then
 fi
 
 # esphome completions (requires python-argcomplete - `brew install python-argcomplete`)
-eval "$(register-python-argcomplete esphome)"
-
+if command -v register-python-argcomplete >/dev/null ; then
+  eval "$(register-python-argcomplete esphome)"
+elif command -v register-python-argcomplete3 >/dev/null ; then
+  eval "$(register-python-argcomplete3 esphome)"
+fi
 
 # aws cli completions
 if command -v aws_completer > /dev/null ; then
