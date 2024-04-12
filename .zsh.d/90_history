@@ -1,12 +1,24 @@
+# hist function (+alias) to override OMZ only showing recent
+# using and alias allows easily unsetting to default functionality
+# this is supposed to be getting fixed - https://github.com/ohmyzsh/ohmyzsh/pull/12341
+hist () {
+	if [[ -z $1 ]]
+	then
+		omz_history -i 1
+	fi
+}
+alias history=hist
+
 # put history settings last so they override OMZ
 export HISTFILE=~/.zsh_history
 # Timestamp - you can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-export HIST_STAMPS="yyyy-mm-dd"
-export HISTSIZE=500000
-export SAVEHIST=500000
+#export HIST_STAMPS="yyyy-mm-dd"
+export HIST_STAMPS=
+export HISTSIZE=750000
+export SAVEHIST=750000
 
 setopt share_history     # like INC_APPEND_HISTORY but also imports(reads) when history is called
 setopt extended_history  # record timestamp of command in HISTFILE
