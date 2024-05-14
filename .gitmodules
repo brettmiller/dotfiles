@@ -28,3 +28,6 @@
 [submodule "/Users/Brett.Miller/.vim/bundle/ale"]
 	path = .vim/bundle/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "/Users/Brett.Miller/.vim/pack/plugins/start/vim-terraform"]
+	path = .vim/pack/plugins/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
