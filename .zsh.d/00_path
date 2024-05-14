@@ -1,6 +1,12 @@
 # reset/force initial $PATH. This keeps us from getting the PATH from /etc/paths & /etc/paths.d and should
+# Paths in $HOME are added last so they're first in the search path
 # keep things more consistent across systems
-PATH=$HOME/bin:${HOME}/.local/bin:${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+# If $HOMEBREW_PREFIX is set add Homebrew paths
+if [[ -n $HOMEBREW_PREFIX ]]; then
+  PATH=${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+fi
 
 # If we're on MacOS and Homebrew is installed setup PATHs
 if [[ $(uname -s) == Darwin && -x /opt/homebrew/bin/brew || -x /usr/local/Homebrew/bin/brew ]]; then
@@ -77,5 +83,16 @@ fi
 # Snowflake adds the exports to ~/.zshrc w/ $PATH at the end
 if [[ -d /Applications/SnowSQL.app/Contents/MacOS ]]; then
   export PATH="$PATH:/Applications/SnowSQL.app/Contents/MacOS"
+fi
+
+## Add paths in $HOME last so they're first
+# If $HOME/.local/bin exist add it to path
+if [[ -d ${HOME}/.local/bin ]]; then
+  PATH=${HOME}/.local/bin:$PATH
+fi
+
+# If $HOME/bin exist add it to path
+if [[ -d ${HOME}/bin ]]; then
+  PATH=${HOME}/bin:$PATH
 fi
 
