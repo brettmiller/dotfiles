@@ -10,6 +10,7 @@ if which python3 | grep -q '${HOMEBREW_PREFIX}/bin' ; then
 fi
 alias gw='open $(git web-url)' # open current git repo url in browser
 alias tf='terraform'
+alias ot='tofu'
 alias vim-install="rake -f ~/.vim/rakefile-vim-install"
 alias hg='history | grep $*'
 alias ll='ls -l'

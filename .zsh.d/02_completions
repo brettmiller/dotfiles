@@ -44,6 +44,8 @@ fi
 
 # terraform
 complete -o nospace -C ${HOMEBREW_PREFIX}/bin/terraform terraform
+# opentofu
+complete -o nospace -C ${HOMEBREW_PREFIX}/bin/tofu tofu
 
 # generated with `pip3 completion --zsh`
 if command -v pip3 --version > /dev/null ; then
