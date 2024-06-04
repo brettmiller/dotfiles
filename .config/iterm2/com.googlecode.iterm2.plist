@@ -6,6 +6,12 @@
 	<array/>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AiMaxTokens</key>
+	<integer>16384</integer>
+	<key>AiModel</key>
+	<string>ollama/llama3</string>
+	<key>AitermURL</key>
+	<string>http://localhost:11434/v1/chat/completions</string>
 	<key>AllowClipboardAccess</key>
 	<false/>
 	<key>AnimateDimming</key>
@@ -560,12 +566,18 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf702-0x300000</key>
+		<key>0xf702-0x300000-0x7b</key>
 		<dict>
 			<key>Action</key>
-			<integer>2</integer>
+			<integer>31</integer>
+			<key>Apply Mode</key>
+			<integer>0</integer>
+			<key>Escaping</key>
+			<integer>1</integer>
 			<key>Text</key>
 			<string></string>
+			<key>Version</key>
+			<integer>2</integer>
 		</dict>
 		<key>0xf702-0x320000</key>
 		<dict>
@@ -574,19 +586,31 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf702-0x340000</key>
+		<key>0xf702-0x340000-0x7b</key>
 		<dict>
 			<key>Action</key>
-			<integer>31</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
-		<key>0xf703-0x300000</key>
-		<dict>
-			<key>Action</key>
+			<integer>2</integer>
+			<key>Apply Mode</key>
 			<integer>0</integer>
+			<key>Escaping</key>
+			<integer>1</integer>
 			<key>Text</key>
 			<string></string>
+			<key>Version</key>
+			<integer>2</integer>
+		</dict>
+		<key>0xf703-0x300000-0x7c</key>
+		<dict>
+			<key>Action</key>
+			<integer>30</integer>
+			<key>Apply Mode</key>
+			<integer>0</integer>
+			<key>Escaping</key>
+			<integer>1</integer>
+			<key>Text</key>
+			<string></string>
+			<key>Version</key>
+			<integer>2</integer>
 		</dict>
 		<key>0xf703-0x320000</key>
 		<dict>
@@ -595,12 +619,18 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf703-0x340000</key>
+		<key>0xf703-0x340000-0x7c</key>
 		<dict>
 			<key>Action</key>
-			<integer>30</integer>
+			<integer>0</integer>
+			<key>Apply Mode</key>
+			<integer>0</integer>
+			<key>Escaping</key>
+			<integer>1</integer>
 			<key>Text</key>
 			<string></string>
+			<key>Version</key>
+			<integer>2</integer>
 		</dict>
 		<key>0xf729-0x100000</key>
 		<dict>
@@ -1972,7 +2002,7 @@
 			<key>Minimum Contrast</key>
 			<real>0.27678888494318182</real>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
@@ -3389,6 +3419,8 @@
 			<string>/Users/bmille2</string>
 		</dict>
 	</array>
+	<key>OnePasswordAccount</key>
+	<string>brett.miller@vitalsource.com</string>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -3530,7 +3562,7 @@
 	<false/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Command History</string>
+		<string>Codecierge</string>
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
