@@ -1,7 +1,6 @@
 tap "homebrew/cask"
 tap "atombender/ktail"
 tap "mas-cli/tap"
-tap "homebrew/cask-fonts"
 #tap "chef/chef"
 #tap "jakehilborn/jakehilborn" #for MacOS 'displayplacer'
 brew "zsh"
