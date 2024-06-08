@@ -33,6 +33,13 @@ let g:secure_modelines_verbose = 1
 "Plugin 'sheerun/vim-polyglot'
 
 Plugin 'dense-analysis/ale'
+" enable ALE fixers, don't fix on save
+"let g:ale_fix_on_save = 0
+let g:ale_fixers = {
+\  '*': ['trim_whitespace'],
+\  'yaml': ['yamlfmt'],
+\  'terraform': ['terraform'],
+\}
 
 "Plugin 'fmoralesc/vim-pad.git'
 "" --- vim-pad config ---
