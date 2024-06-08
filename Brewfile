@@ -5,7 +5,6 @@ tap "mas-cli/tap"
 #tap "jakehilborn/jakehilborn" #for MacOS 'displayplacer'
 brew "zsh"
 brew "antigen"
-brew "openssh"
 brew "mas-cli/tap/mas"
 brew "fontforge"
 brew "svn" # needed by some of the font casks because they set "using: svn" 🤦
