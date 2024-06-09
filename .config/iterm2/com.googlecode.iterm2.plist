@@ -4260,7 +4260,7 @@
 												<key>Substitutions</key>
 												<dict/>
 												<key>Working Directory</key>
-												<string>/Users/Brett.Miller</string>
+												<string>/Users/bam</string>
 												<key>Working Directory Poller Disabled</key>
 												<true/>
 											</dict>
@@ -7113,7 +7113,7 @@
 													<string>$$</string>
 												</dict>
 												<key>Working Directory</key>
-												<string>/Users/Brett.Miller</string>
+												<string>/Users/bam</string>
 												<key>Working Directory Poller Disabled</key>
 												<false/>
 											</dict>
@@ -7900,7 +7900,7 @@
 													<string>$$</string>
 												</dict>
 												<key>Working Directory</key>
-												<string>/Users/Brett.Miller</string>
+												<string>/Users/bam</string>
 												<key>Working Directory Poller Disabled</key>
 												<false/>
 											</dict>
@@ -8709,7 +8709,7 @@
 													<string>$$</string>
 												</dict>
 												<key>Working Directory</key>
-												<string>/Users/Brett.Miller</string>
+												<string>/Users/bam</string>
 												<key>Working Directory Poller Disabled</key>
 												<false/>
 											</dict>
@@ -9496,7 +9496,7 @@
 													<string>$$</string>
 												</dict>
 												<key>Working Directory</key>
-												<string>/Users/Brett.Miller</string>
+												<string>/Users/bam</string>
 												<key>Working Directory Poller Disabled</key>
 												<false/>
 											</dict>
