@@ -2013,6 +2013,8 @@
 			<false/>
 			<key>Normal Font</key>
 			<string>Monaco 12</string>
+			<key>Open Password Manager Automatically</key>
+			<true/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
