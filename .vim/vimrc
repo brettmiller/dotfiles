@@ -40,6 +40,8 @@ let g:ale_fixers = {
 \  'yaml': ['yamlfmt'],
 \  'terraform': ['terraform'],
 \}
+highlight ALEVirtualTextWarning ctermfg=yellow guifg=yellow
+highlight ALEVirtualTextError   ctermfg=red guifg=red
 
 "Plugin 'fmoralesc/vim-pad.git'
 "" --- vim-pad config ---
