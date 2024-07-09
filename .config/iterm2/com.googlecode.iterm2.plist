@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AI Prompt</key>
+	<string>Return commands suitable for copy/pasting into \(shell) on \(uname). Do NOT include commentary NOR Markdown triple-backtick code blocks as your whole response will be copied into my terminal automatically.
+
+The script should do this: \(ai.prompt)</string>
 	<key>Actions</key>
 	<array/>
 	<key>AdjustWindowForFontSizeChange</key>
@@ -11,7 +15,7 @@
 	<key>AiModel</key>
 	<string>ollama/llama3</string>
 	<key>AitermURL</key>
-	<string>http://localhost:11434/v1/chat/completions</string>
+	<string>http://localhost:8080/v1/chat/completions</string>
 	<key>AllowClipboardAccess</key>
 	<false/>
 	<key>AnimateDimming</key>
@@ -26,6 +30,8 @@
 	<true/>
 	<key>CommandSelection</key>
 	<true/>
+	<key>ComposerHeight</key>
+	<real>257.30078125</real>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>ConvertDosNewlines</key>
