@@ -1,0 +1,6 @@
+extends: default
+
+rules:
+  line-length:
+    max: 100 # 80 is too short
+    allow-non-breakable-inline-mappings: true
