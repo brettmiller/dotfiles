@@ -1,11 +1,12 @@
 tap "homebrew/cask"
 tap "atombender/ktail"
-tap "mas-cli/tap"
+#tap "mas-cli/tap"
+#brew "mas-cli/tap/mas"
+brew "mas" # Mac App Store cli (used w/ `mas app...` below)
 #tap "chef/chef"
 #tap "jakehilborn/jakehilborn" #for MacOS 'displayplacer'
 brew "zsh"
 brew "antigen"
-brew "mas-cli/tap/mas"
 brew "fontforge"
 brew "svn" # needed by some of the font casks because they set "using: svn" 🤦
 brew "colima"
