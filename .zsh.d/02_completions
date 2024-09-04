@@ -43,7 +43,9 @@ if command -v berglas >/dev/null ; then
 fi
 
 # terraform
-complete -o nospace -C ${HOMEBREW_PREFIX}/bin/terraform terraform
+#complete -o nospace -C ${HOMEBREW_PREFIX}/bin/terraform terraform
+# us terraform that first in path (brew no longer updates terraform)
+complete -o nospace -C terraform terraform
 # opentofu
 complete -o nospace -C ${HOMEBREW_PREFIX}/bin/tofu tofu
 
