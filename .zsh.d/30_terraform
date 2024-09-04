@@ -2,3 +2,5 @@ if [[ -r ~/code/github.com/vitalsource/vst-terraform/bin/SOURCE_ME ]]; then
   source ~/code/github.com/vitalsource/vst-terraform/bin/SOURCE_ME
   alias tf=terraform
 fi
+
+complete -o nospace -C terraform terraform
