@@ -26,7 +26,7 @@ install_prereq() {
   #  ?? ${HOME}/Notational_Data_work ${HOME}/notes ??
   #  '
 
-  read -p "hit "Enter" to continue"
+  read -p 'hit "Enter" to continue'
   echo -n "Test for/setup dotfiles repo: "
   install_dotfiles
 }
@@ -42,7 +42,7 @@ install_dotfiles() {
 }
 
 1pass_ssh_agent () {
-  while [ ! "$agent_choice" == "y" -a ! "$agent_choice" == "n" ]; do
+  while [ ! "$agent_choice" == "y" ] && [ ! "$agent_choice" == "n" ]; do
     read -p 'Setup 1Password ssh agent, y/n? ' agent_choice
   done
 
@@ -61,7 +61,7 @@ install_dotfiles() {
 main () {
   echo ""
   choice="z"
-  while [ ! "$choice" == "y" -a ! "$choice" == "n" -a ! "$choice" == "i" ]; do
+  while [ ! "$choice" == "y" ] && [ ! "$choice" == "n" ] && [ ! "$choice" == "i" ]; do
     read -p 'Homebrew, xcode cli tools, Google Drive Desktop, & dotfiles repo should be installed/setup before proceeding
   continue?
 
