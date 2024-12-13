@@ -1,7 +1,10 @@
 fpath=(${HOMEBREW_PREFIX}/share/zsh-completions "${HOME}/.zsh.d/zsh-completions" /usr/share/zsh/vendor-completions $fpath)
 
 # enables python argcomplete globally or by adding to fpath in ~/.zshenv if global fails
-( activate-global-python-argcomplete || activate-global-python-argcomplete --user --yes ) 2>/dev/null
+# below fails if first needs to install/update and it asked to proceed [y/N]. So, just do
+# the second part (after ||).
+#( activate-global-python-argcomplete || activate-global-python-argcomplete --user --yes ) 2>/dev/null
+( activate-global-python-argcomplete --user --yes ) 2>/dev/null
 
 mkdir -p ${HOME}/.zsh.d/zsh-completions
 
