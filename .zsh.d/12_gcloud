@@ -1,3 +1,6 @@
+# this is needed at least until gcloud/gsutil support 3.13
+export CLOUDSDK_PYTHON='/opt/homebrew/bin/python3.12'
+
 # Source gcloud sdk bash/zsh setup scripts
 if [[ -d ${HOME}/google-cloud-sdk ]]; then
   source "${HOME}/google-cloud-sdk/path.zsh.inc"
