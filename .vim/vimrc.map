@@ -1,3 +1,20 @@
+" Use ctrl-[hjkl] to select the active split!
+" ctrl- doesn't seem to work, alt- does
+"nmap <silent> <c-k> :wincmd k<CR>
+"nmap <silent> <c-j> :wincmd j<CR>
+"nmap <silent> <c-h> :wincmd h<CR>
+"nmap <silent> <c-l> :wincmd l<CR>
+nmap <silent> <a-k> :wincmd k<CR>
+nmap <silent> <a-j> :wincmd j<CR>
+nmap <silent> <a-h> :wincmd h<CR>
+nmap <silent> <a-l> :wincmd l<CR>
+
+"different way to do above
+"map <a-k> <c-w>k
+"map <a-j> <c-w>j
+"map <a-h> <c-w>h
+"map <a-l> <c-w>l
+
 let mapleader=' '
 
 "" base64-encode(visual-selection) -> F2 -> encoded base64-string
