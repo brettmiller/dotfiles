@@ -42,6 +42,10 @@ let g:ale_fixers = {
 \}
 highlight ALEVirtualTextWarning ctermfg=yellow guifg=yellow
 highlight ALEVirtualTextError   ctermfg=red guifg=red
+" ALEWarning uses SpellCap colors for warning highlights, change it instead of ALE
+highlight SpellCap ctermbg=darkgrey guibg=darkblue
+" ALEError uses SpellBad for error highlights, use below to change
+"highlight SpellBad ctermbg=COLOR guibg=COLOR
 
 "Plugin 'fmoralesc/vim-pad.git'
 "" --- vim-pad config ---

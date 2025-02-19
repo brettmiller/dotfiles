@@ -109,6 +109,8 @@ if &t_Co > 2 || has("gui_running")
   set background=dark
   set hlsearch
   hi StatusLine cterm=bold ctermfg=lightgreen ctermbg=darkblue gui=bold guifg=lightgreen guibg=blue
+  "use 24-bit colors (for gui colors in any terminal app, like iTerm)
+  set termguicolors
 endif
 
 " Turn on black BG grey FG in gvim
