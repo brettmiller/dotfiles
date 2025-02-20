@@ -17,6 +17,9 @@ nmap <silent> <a-l> :wincmd l<CR>
 
 let mapleader=' '
 
+" leader l clears search highlighting
+nnoremap <nowait><silent> <leader>l :noh<CR>
+
 "" base64-encode(visual-selection) -> F2 -> encoded base64-string
 "" macos base64 now accepts `-d` so no longer need if/else - bm 2024-12-04
 "if has ('macunix')
@@ -42,4 +45,4 @@ vnoremap <leader>d c<c-r>=system('base64 -d', @")<cr>
 "ALE offers some commands with <Plug> keybinds for moving between warnings and errors quickly.
 "You can map the keys Ctrl+j and Ctrl+k to moving between errors for example:
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
