@@ -30,5 +30,5 @@ fi
 unset i
 
 # Begin added by argcomplete
-source "/opt/homebrew/Cellar/python-argcomplete/3.5.3/libexec/lib/python3.13/site-packages/argcomplete/bash_completion.d/_python-argcomplete"
+source "/opt/homebrew/Cellar/python-argcomplete/3.6.0/libexec/lib/python3.13/site-packages/argcomplete/bash_completion.d/_python-argcomplete"
 # End added by argcomplete
