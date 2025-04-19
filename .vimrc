@@ -36,6 +36,8 @@ set ignorecase          " ignore case when using a search pattern
 set smartcase           " override 'ignorecase' when pattern
                         " has upper case character
 set formatoptions+=j    " Delete comment characters when joining lines += adds to existing option
+set splitbelow          " splitting a window horizontially will put the new window below the current one.
+set splitright          " splitting a window vertically will put the new window right of the current one.
 set printoptions=paper:letter,header:0 ",duplex:off  " set printer paper type and other options.
 
 " Maximum column in which to search for syntax items.  In long lines the text after this column is not
