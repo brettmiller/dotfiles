@@ -1,3 +1,7 @@
+---
+# https://yamllint.readthedocs.io/en/stable/configuration.html#default-configuration
+# https://yamllint.readthedocs.io/en/stable/rules.html
+
 extends: default
 
 rules:
