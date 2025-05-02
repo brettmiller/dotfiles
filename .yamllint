@@ -1,6 +1,16 @@
+---
+# https://yamllint.readthedocs.io/en/stable/configuration.html#default-configuration
+# https://yamllint.readthedocs.io/en/stable/rules.html
+
 extends: default
 
 rules:
   line-length:
+    level: warning
     max: 180 # 80 is too short and so is 100
+    allow-non-breakable-words: true
     allow-non-breakable-inline-mappings: true
+  comments:
+    require-starting-space: false
+  empty-lines:
+    max-end: 1
