@@ -7,8 +7,10 @@
 
 [credential]
   helper = osxkeychain
+
 [push]
   default = simple
+
 [alias]
   a = add
   b = branch
@@ -55,18 +57,31 @@
   # end
   listalias = config --get-regexp alias
   aliaslist = config --get-regexp alias
+
 [diff]
   compactionHeuristic = true
   tool = vscode
+
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE
+
 [pager]
   branch = false
+
 [pull]
   ff = only
+
 [core]
   attributesfile = /Users/bmille2/.gitattributes
+  pager = delta
+
+[delta]
+  navigate = true # use n and N to navigate between sections
+  #side-by-side = true
+
 [init]
   defaultBranch = main
+
 [fetch]
   prune = true
+
