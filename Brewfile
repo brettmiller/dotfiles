@@ -59,6 +59,8 @@ brew "numpy" # increases performance of `gcloud compute ssh --tunnel-through-iap
 brew "bc"
 brew "atombender/ktail/ktail"
 brew "openjdk"
+brew "bat"
+brew "git-delta"
 #brew "displayplacer"
 #brew "gnu-tar", args: ["--with-default-names"]  ## this arg no longer works
 #brew "libtool", args: ["--with-default-names"]

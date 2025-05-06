@@ -2,6 +2,7 @@
 # ---------
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob '!.git/*'"
 export FZF_TMUX_HEIGHT='50%'
+export FZF_DEFAULT_OPTS="--bind alt-down:preview-page-down,alt-up:preview-page-up"
 
 if command -v brew >/dev/null && [[ ! "$PATH" == *${HOMEBREW_PREFIX}/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}${HOMEBREW_PREFIX}/opt/fzf/bin"
@@ -17,3 +18,5 @@ if command -v brew >/dev/null &&  [[ -f ${HOMEBREW_PREFIX}/opt/fzf/shell/key-bin
   source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
 fi
 
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+#export FZT_ALT_C_OPTS=""

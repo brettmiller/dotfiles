@@ -25,7 +25,7 @@ set magic
 set showmatch           " Show matching bracket for last "}"
 set autoindent
 "set paste              " Don't autoindent when pasting. (adding commented for reference)
-set shiftwidth=4        " This is under the autoindenting.
+set shiftwidth=2        " This is under the autoindenting.
 set tabstop=2
 set expandtab           " always uses spaces instead of tab characters
 set ruler
