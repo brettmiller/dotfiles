@@ -1,4 +1,4 @@
-tap "homebrew/cask" # Tapping homebrew/cask is no longer typically necessary.
+#tap "homebrew/cask" # Tapping homebrew/cask is no longer typically necessary.
 tap "atombender/ktail"
 #tap "mas-cli/tap"
 #brew "mas-cli/tap/mas"
@@ -61,7 +61,7 @@ brew "atombender/ktail/ktail"
 brew "openjdk"
 brew "bat"
 brew "git-delta"
-cask "subnetcalc"
+brew "subnetcalc"
 #brew "displayplacer"
 #brew "gnu-tar", args: ["--with-default-names"]  ## this arg no longer works
 #brew "libtool", args: ["--with-default-names"]
