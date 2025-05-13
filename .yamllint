@@ -14,3 +14,4 @@ rules:
     require-starting-space: false
   empty-lines:
     max-end: 1
+  spaces: 2
