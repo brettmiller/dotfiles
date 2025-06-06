@@ -38,6 +38,7 @@
   dmb = "!git b --merged | grep -E -v \"$(git default)|main|master\" | xargs git b -d" # locally delete merged branches excluding 'default', main, master
   merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3-"
   delete-merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3- | xargs -n 1 git push --delete origin"
+  dumb = delete-merged-on-origin # dumb = delete upstream merged branches
   l = log
   p = push
   pl = pull
