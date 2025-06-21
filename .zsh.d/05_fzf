@@ -1,6 +1,8 @@
 # Setup fzf
 # ---------
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob '!.git/*'"
+#export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden --glob='!{.git/*,.zsh_history-*,.Trash/**,**/.DS_Store,.pics/**,.wine/**,*.localized/**}'"
+# above with {} grouped glob doesn't work, at least not well, so used separate negated globs for filtering
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden -g '!.git/*' -g '!.zsh_history-*' -g '!Trash/**' -g '!.DS_Store' -g '!.pics/**' -g '!.wine/**' -g '!*.localized/**'"
 export FZF_TMUX_HEIGHT='50%'
 export FZF_DEFAULT_OPTS="--bind alt-down:preview-page-down,alt-up:preview-page-up"
 
