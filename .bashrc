@@ -103,7 +103,7 @@ readonly USER_BASH_INCLUDES_DIR
 #  Induled/source all exteral files in $USER_BASH_INCLUDES_DIR (default is $HOME/.bash.d)
 if [[ -d $USER_BASH_INCLUDES_DIR && -r $USER_BASH_INCLUDES_DIR && \
     -x $USER_BASH_INCLUDES_DIR ]]; then
-    for i in $(LC_ALL=C command ls "$USER_BASH_INCLUDES_DIR" | egrep -v ".*~|.*.bak|.*.swp|\#*\#|.*.dpkg*|.*.rpm*|Makefile.*|.*.off"); do
+    for i in $(LC_ALL=C command ls "$USER_BASH_INCLUDES_DIR" | grep -E -v ".*~|.*.bak|.*.swp|\#*\#|.*.dpkg*|.*.rpm*|Makefile.*|.*.off"); do
         i=$USER_BASH_INCLUDES_DIR/$i
         [[ -f $i && -r $i ]] && . "$i" #Uncomment for debugging -  && echo "included: $i"
     done

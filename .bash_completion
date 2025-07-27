@@ -8,7 +8,7 @@ readonly USER_BASH_COMPLETION USER_BASH_COMPLETION_DIR EXTRA_BASH_COMPLETION_DIR
 # Include completion files in 
 if [[ -d $USER_BASH_COMPLETION_DIR && -r $USER_BASH_COMPLETION_DIR && \
     -x $USER_BASH_COMPLETION_DIR ]]; then
-    for i in $(LC_ALL=C command ls "$USER_BASH_COMPLETION_DIR" | egrep -v "~|.bak|.swp|.dpkg|.rpm|.rpm@(orig|new|save)|Makefile|.orig|-orig|.off" ); do
+    for i in $(LC_ALL=C command ls "$USER_BASH_COMPLETION_DIR" | grep -E -v "~|.bak|.swp|.dpkg|.rpm|.rpm@(orig|new|save)|Makefile|.orig|-orig|.off" ); do
         i=$USER_BASH_COMPLETION_DIR/$i
 		#echo $i
         #[[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|*.rpm@(orig|new|save)|Makefile*|*.off) && -f $i && -r $i ]] && . "$i"
@@ -20,7 +20,7 @@ unset i
 # Include "extra"/secondary bash_completion.d directory (i.e. from Homebrew)
 if [[ -d $EXTRA_BASH_COMPLETION_DIR && -r $EXTRA_BASH_COMPLETION_DIR && \
     -x $EXTRA_BASH_COMPLETION_DIR ]]; then
-    for i in $(LC_ALL=C command ls "$EXTRA_BASH_COMPLETION_DIR" | egrep -v "~|.bak|.swp|.dpkg|.rpm|.rpm@(orig|new|save)|Makefile|.orig|-orig|.off" ); do
+    for i in $(LC_ALL=C command ls "$EXTRA_BASH_COMPLETION_DIR" | grep -E -v "~|.bak|.swp|.dpkg|.rpm|.rpm@(orig|new|save)|Makefile|.orig|-orig|.off" ); do
         i=$EXTRA_BASH_COMPLETION_DIR/$i
 		#echo $i
         #[[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|*.rpm@(orig|new|save)|Makefile*|*.off) && -f $i && -r $i ]] && . "$i"
@@ -29,6 +29,3 @@ if [[ -d $EXTRA_BASH_COMPLETION_DIR && -r $EXTRA_BASH_COMPLETION_DIR && \
 fi
 unset i
 
-# Begin added by argcomplete
-source "/opt/homebrew/Cellar/python-argcomplete/3.6.0/libexec/lib/python3.13/site-packages/argcomplete/bash_completion.d/_python-argcomplete"
-# End added by argcomplete
