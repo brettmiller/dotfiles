@@ -80,7 +80,6 @@ workspaces = true
 
 ## Invert the UI - put the search bar at the top , Default to `false`
 # invert = false
-
 ## enable or disable showing a preview of the selected command
 ## useful when the command is longer than the terminal width and is cut off
 # show_preview = true
@@ -101,6 +100,7 @@ workspaces = true
 ## use ctrl instead of alt as the shortcut modifier key for numerical UI shortcuts
 ## alt-0 .. alt-9
 # ctrl_n_shortcuts = false
+ctrl_n_shortcuts = true
 
 ## default history list format - can also be specified with the --format arg
 # history_format = "{time}\t{command}\t{duration}"
