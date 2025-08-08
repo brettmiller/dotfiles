@@ -63,6 +63,7 @@ brew "bat"
 brew "bat-extras"
 brew "git-delta"
 brew "subnetcalc"
+brew "atuin"
 #brew "displayplacer"
 #brew "gnu-tar", args: ["--with-default-names"]  ## this arg no longer works
 #brew "libtool", args: ["--with-default-names"]

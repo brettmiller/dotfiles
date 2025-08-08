@@ -1,0 +1,4 @@
+# atuin setup (requires atuin to be installed. installed w/ brew)
+#eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow )"
+
