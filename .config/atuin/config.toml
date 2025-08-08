@@ -199,6 +199,7 @@ common_subcommands = [
   "esphome",
   "git",
   "go",
+  "hass-cli",
   "ip",
   "jj",
   "kubectl",
