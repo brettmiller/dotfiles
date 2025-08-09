@@ -1,7 +1,7 @@
-[submodule ".zsh.d/omz-custom/plugins/fzf-tab"]
-  path = .zsh.d/omz-custom/plugins/fzf-tab
-  url = https://github.com/Aloxaf/fzf-tab
-  branch = master
+#[submodule ".zsh.d/omz-custom/plugins/fzf-tab"]
+#  path = .zsh.d/omz-custom/plugins/fzf-tab
+#  url = https://github.com/Aloxaf/fzf-tab
+#  branch = master
 [submodule ".vim/bundle/auto-pairs"]
   path = .vim/bundle/auto-pairs
   url = https://github.com/jiangmiao/auto-pairs.git
