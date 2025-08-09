@@ -1,33 +1,44 @@
 [submodule ".zsh.d/omz-custom/plugins/fzf-tab"]
-	path = .zsh.d/omz-custom/plugins/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab
+  path = .zsh.d/omz-custom/plugins/fzf-tab
+  url = https://github.com/Aloxaf/fzf-tab
+  branch = master
 [submodule ".vim/bundle/auto-pairs"]
-	path = .vim/bundle/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs.git
+  path = .vim/bundle/auto-pairs
+  url = https://github.com/jiangmiao/auto-pairs.git
+  branch = master
 [submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
+  path = .vim/bundle/vim-airline
+  url = https://github.com/vim-airline/vim-airline.git
+  branch = master
 [submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+  path = .vim/bundle/vim-fugitive
+  url = https://github.com/tpope/vim-fugitive.git
+  branch = master
 [submodule ".vim/bundle/vim-json"]
-	path = .vim/bundle/vim-json
-	url = https://github.com/elzr/vim-json.git
+  path = .vim/bundle/vim-json
+  url = https://github.com/elzr/vim-json.git
+  branch = master
 [submodule ".vim/bundle/vim-markdown-preview"]
-	path = .vim/bundle/vim-markdown-preview
-	url = https://github.com/JamshedVesuna/vim-markdown-preview.git
+  path = .vim/bundle/vim-markdown-preview
+  url = https://github.com/JamshedVesuna/vim-markdown-preview.git
+  branch = master
 [submodule ".vim/bundle/vim-polyglot"]
-	path = .vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
+  path = .vim/bundle/vim-polyglot
+  url = https://github.com/sheerun/vim-polyglot.git
+  branch = master
 [submodule ".vim/bundle/vim-puppet"]
-	path = .vim/bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
+  path = .vim/bundle/vim-puppet
+  url = https://github.com/rodjek/vim-puppet.git
+  branch = master
 [submodule ".zsh.d/omz-custom/plugins/zsh-syntax-highlighting"]
-	path = .zsh.d/omz-custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  path = .zsh.d/omz-custom/plugins/zsh-syntax-highlighting
+  url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  branch = master
 [submodule "/Users/Brett.Miller/.vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = https://github.com/dense-analysis/ale
+  path = .vim/bundle/ale
+  url = https://github.com/dense-analysis/ale
+  branch = master
 [submodule "/Users/Brett.Miller/.vim/pack/plugins/start/vim-terraform"]
-	path = .vim/pack/plugins/start/vim-terraform
-	url = https://github.com/hashivim/vim-terraform.git
+  path = .vim/pack/plugins/start/vim-terraform
+  url = https://github.com/hashivim/vim-terraform.git
+  branch = master
