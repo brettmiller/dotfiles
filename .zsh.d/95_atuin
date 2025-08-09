@@ -1,4 +1,6 @@
 # atuin setup (requires atuin to be installed. installed w/ brew)
+# now setup in 95_atuin-fzf which adds a bindkey for using atuin+fzf as well as the atuin search
+
 #eval "$(atuin init zsh)"
-eval "$(atuin init zsh --disable-up-arrow )"
+#eval "$(atuin init zsh --disable-up-arrow )"
 
