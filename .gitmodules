@@ -46,3 +46,12 @@
   path = .vim/pack/plugins/start/vim-terraform
   url = https://github.com/hashivim/vim-terraform.git
   branch = master
+[submodule "/Users/Brett.Miller/.vim/bundle/vim-easy-align"]
+  path = .vim/bundle/vim-easy-align
+  url = https://github.com/vim-scripts/vim-easy-align.git
+  branch = master
+[submodule "/Users/Brett.Miller/.vim/bundle/securemodelines"]
+  path = .vim/bundle/securemodelines
+  url = https://github.com/alexghergh/securemodelines.git
+  branch = master
+
