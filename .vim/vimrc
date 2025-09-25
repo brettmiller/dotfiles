@@ -47,6 +47,13 @@ highlight SpellCap ctermbg=darkgrey guibg=darkblue
 " ALEError uses SpellBad for error highlights, use below to change
 "highlight SpellBad ctermbg=COLOR guibg=COLOR
 
+
+Plugin 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 "Plugin 'fmoralesc/vim-pad.git'
 "" --- vim-pad config ---
 "let g:pad#dir="~/notes"
