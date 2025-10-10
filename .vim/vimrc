@@ -78,6 +78,9 @@ Plugin 'tpope/vim-fugitive'
 
 " https://github.com/tpope/vim-surround
 Plugin 'tpope/vim-surround'
+let g:surround_40 = "(\r)"   " 40 is '('
+let g:surround_91 = "[\r]"   " 91 is '['
+let g:surround_123 = "{\r}"  " 123 is '{'
 
 " Insert or delete brackets, parens, quotes in pair. https://github.com/jiangmiao/auto-pairs
 Plugin 'jiangmiao/auto-pairs'
