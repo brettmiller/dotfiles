@@ -78,7 +78,7 @@ Plugin 'tpope/vim-fugitive'
 
 " https://github.com/tpope/vim-surround
 Plugin 'tpope/vim-surround'
-let g:surround_40 = "(\r)"   " 40 is '('
+let g:surround_40 = "(\r)"   " 40 is '(' - these don't seem to work but using the closing version does, so }, ), ]
 let g:surround_91 = "[\r]"   " 91 is '['
 let g:surround_123 = "{\r}"  " 123 is '{'
 
