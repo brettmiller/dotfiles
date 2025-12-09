@@ -75,7 +75,7 @@
 
 [core]
   attributesfile = /Users/bmille2/.gitattributes
-  pager = /usr/local/bin/delta
+  pager = /opt/homebrew/bin/delta
 
 [delta]
   navigate = true # use n and N to navigate between sections
