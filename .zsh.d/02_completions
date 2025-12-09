@@ -67,6 +67,15 @@ if command -v glow >/dev/null; then
   glow completion zsh >"${HOME}/.zsh.d/zsh-completions/_glow"
 fi
 
+# jira and jiratui completions
+if command -v jira >/dev/null; then
+  jira completion zsh > ${HOME}/.zsh.d/zsh-completions/_jira
+fi
+
+if command -v jiratui >/dev/null; then
+  jiratui completions zsh > ${HOME}/.zsh.d/zsh-completions/_jiratui
+fi
+
 # bash completions - allow bash completions to work and load some w/o zsh equivalents
 autoload bashcompinit
 bashcompinit
