@@ -88,11 +88,14 @@ fi
 ## Add paths in $HOME last so they're first
 # If $HOME/.local/bin exist add it to path
 if [[ -d ${HOME}/.local/bin ]]; then
-  PATH=${HOME}/.local/bin:$PATH
+  export PATH=${HOME}/.local/bin:$PATH
 fi
 
 # If $HOME/bin exist add it to path
 if [[ -d ${HOME}/bin ]]; then
-  PATH=${HOME}/bin:$PATH
+  export PATH=${HOME}/bin:$PATH
 fi
 
+if [[ -d ${HOME}/code/github.com/vitalsource/syseng-tools/bin ]]
+  export PATH="${PATH}:${HOME}/code/github.com/vitalsource/syseng-tools/bin"
+fi
