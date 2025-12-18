@@ -75,3 +75,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # added by Snowflake SnowSQL installer v1.2
 #export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+

@@ -97,5 +97,5 @@ if [[ -d ${HOME}/bin ]]; then
 fi
 
 if [[ -d ${HOME}/code/github.com/vitalsource/syseng-tools/bin ]]
-  export PATH="${PATH}:${HOME}/code/github.com/vitalsource/syseng-tools/bin"
+  export PATH="${PATH}:${HOME}/code/github.com/vitalsource/syseng-tools/bin:${HOME}/code/github.com/vitalsource/syseng-tools/cloudflare:${HOME}/code/github.com/vitalsource/syseng-tools/gcp:${HOME}/code/github.com/vitalsource/syseng-tools/misc:${HOME}/code/github.com/vitalsource/syseng-tools/pupistry-rcac:${HOME}/code/github.com/vitalsource/syseng-tools/systoil-detoilinators:${HOME}/code/github.com/vitalsource/syseng-tools/vst-dum"
 fi
