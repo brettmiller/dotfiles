@@ -40,6 +40,10 @@ let g:ale_fixers = {
 \  'yaml': ['yamlfmt'],
 \  'terraform': ['terraform'],
 \}
+"let g:ale_linters = {
+"\ 'markdown': ['markdownlint-cli2'],
+"s\}
+let g:ale_markdown_markdownlint_executable = 'markdownlint-cli2'
 highlight ALEVirtualTextWarning ctermfg=yellow guifg=yellow
 highlight ALEVirtualTextError   ctermfg=red guifg=red
 " ALEWarning uses SpellCap colors for warning highlights, change it instead of ALE
@@ -65,6 +69,8 @@ Plugin 'vim-airline/vim-airline'
 "let g:airline_powerline_fonts = 1
 "let g:airline_powerline_symbols = 'fancy'
 let g:airline#extensions#ale#enabled = 1
+"removes trailing whitespace check count
+autocmd FileType markdown let g:airline#extensions#whitespace#checks = ['indent', 'mixed-indent-file', 'conflicts']
 
 "Plugin 'Lokaltog/vim-powerline'
 "let g:Powerline_symbols = 'fancy'
