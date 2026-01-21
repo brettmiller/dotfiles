@@ -25,6 +25,16 @@ patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset
   fi
 }
 
+function git_repo_name() {
+  if git rev-parse --is-inside-work-tree &> /dev/null; then
+    # Get the full path to the git repo root and extract the basename
+    echo $(basename $(git rev-parse --show-toplevel))
+  else
+    # Not in a git repo, can return an empty string or something else
+    echo ""
+  fi
+}
+
 # if we don't have git-prompt plugin/git_super_status() use these
 if ( ! $(type git_super_status 2>&1 >/dev/null) ) ; then
   ZSH_THEME_GIT_PROMPT_ADDED=" %{$fg[cyan]%}+"
@@ -43,11 +53,12 @@ function mygit() {
       # When using git_super_status() (from git-promt plugin) you must set $RPROMPT='' in your .zshrc after
       # oh-my-zsh theme/plugin initialization to be able to locate the status somewhere other than the
       # default of the far right side of the (last) prompt line.
+      ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[blue]%}$(git_repo_name)%{$reset_color%}: "
       echo "$(git_super_status)"
     else
       ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
       ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-      echo "[$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_status)%{$fg_bold[blue]%}%{$reset_color%}$ZSH_THEME_GIT_PROMPT_SUFFIX]"
+      echo "[$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_repo_name)$(git_prompt_status)%{$fg_bold[blue]%}%{$reset_color%}$ZSH_THEME_GIT_PROMPT_SUFFIX]"
     fi
   fi
 }
