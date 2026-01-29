@@ -53,7 +53,8 @@ function mygit() {
       # When using git_super_status() (from git-promt plugin) you must set $RPROMPT='' in your .zshrc after
       # oh-my-zsh theme/plugin initialization to be able to locate the status somewhere other than the
       # default of the far right side of the (last) prompt line.
-      ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[blue]%}$(git_repo_name)%{$reset_color%}: "
+      ### color # in ${FG[<#>]} is from `spectrum_ls`
+      ZSH_THEME_GIT_PROMPT_PREFIX="(${FG[135]}$(git_repo_name)%{$reset_color%}: "
       echo "$(git_super_status)"
     else
       ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
