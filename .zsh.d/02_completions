@@ -113,3 +113,8 @@ if command -v aws_completer > /dev/null ; then
  complete -C '${HOMEBREW_PREFIX}/bin/aws_completer' aws
 fi
 
+# Cloudflare Wrangler
+if command -v wrangler > /dev/null; then
+  wrangler complete zsh > ${HOME}/.zsh.d/zsh-completions/_wrangler
+fi
+
