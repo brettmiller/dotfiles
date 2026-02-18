@@ -10,7 +10,7 @@
 
 # Override for HTTPS
 [credential "https://"]
-  helper = /usr/local/bin/git-credential-manager --no-ui
+  helper = ( [[ -t 0  ]] && /usr/local/bin/git-credential-manager --no-ui ) || /usr/local/bin/git-credential-manager
 
 [push]
   default = simple
