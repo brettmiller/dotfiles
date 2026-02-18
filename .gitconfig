@@ -8,6 +8,10 @@
 [credential]
   helper = osxkeychain
 
+# Override for HTTPS
+[credential "https://"]
+  helper = /usr/local/bin/git-credential-manager --no-ui
+
 [push]
   default = simple
 
