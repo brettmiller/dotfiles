@@ -1,0 +1,65 @@
+/* Always show tab close button on hover and never otherwise */
+.tabbrowser-tab .tab-close-button{ display:none; } .tabbrowser-tab:not([pinned]):hover .tab-close-button{ display: flex !important; align-items: center; }
+
+/*
+  Firefox - Chrome-like Shrinking Tabs
+  This style modifies the Firefox UI to provide a Chrome-like tab experience.
+  Features:
+  - Prevents the tab bar from ever scrolling.
+  - Allows tabs to shrink down to 1px (70px for the active tab).
+  - Centers the favicon on very small tabs for better visibility.
+  - Fixes the common "blank space" bug when closing tabs.
+  - Preserves tab drag-and-drop shuffle animation.
+  Tested and working on Firefox 146.0.0 (macOS).
+  From: https://github.com/bpetrynski/firefox-shrinking-tabs-css/blob/main/userChrome.css
+
+  Need to take bits of this and https://www.reddit.com/r/FirefoxCSS/comments/1fvry4k/comment/lqg7znd/ - scroll arrow
+  hidding from this and tab sizing from the other
+
+  merged config isn't removing arrows and keeps groups from collapse
+*/
+
+/* 2. Hide scroll buttons */
+.tabbrowser-arrowscrollbox > .scrollbutton-up,
+.tabbrowser-arrowscrollbox > .scrollbutton-down,
+.tabbrowser-scrollbox-overflow-indicator {
+    display: none !important;
+}
+
+/* 5. Keep the proven "graceful close" to prevent the blank space bug */
+.tabbrowser-tab[closing] {
+    min-width: 0px !important;
+    max-width: 0px !important;
+    padding-inline: 0px !important;
+    margin-inline: 0px !important;
+    opacity: 0 !important;
+    transition: all 150ms ease !important;
+}
+
+/* Set tab minimum width */
+/* from: https://www.reddit.com/r/FirefoxCSS/comments/1fvry4k/comment/lqg7znd/ */
+:root {
+  --set-tab-min-width: 20px; /* default 8px */
+}
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+  min-width: var(--set-tab-min-width) !important;
+}
+
+/* Adjust padding for better centering and less wasted space */
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) .tab-content {
+  padding-left: calc((var(--set-tab-min-width) - 3px)/2) !important;
+  padding-right: calc((var(--set-tab-min-width) - 3px)/2) !important;
+}
+
+/* Reduce close button's padding for less wasted space */
+.tab-close-button.close-icon {
+  padding-left: 1px !important;
+  padding-right: 2px !important;
+}
+
+/* Set Active tab width */
+/* Adjust '180px' to suit... or set '8px' if wider Active tab not required */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+  min-width: 75px !important; /* default 180px */
+}
+
