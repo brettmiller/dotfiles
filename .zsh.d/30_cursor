@@ -1,3 +1,11 @@
 # source cursor shell integration
 # allow turn agent mode on or off in the shell with ^I
-eval "$(~/.local/bin/agent shell-integration zsh)"
+#
+# this is integration w/ the shell and *not* completions. 
+#
+#  disabled in part b/c it can be annoying 
+#  and need to figure out guardrails
+#
+#if command -v ~/.local/bin/agent >/dev/null ; then
+#  eval "$(~/.local/bin/agent shell-integration zsh)"
+#fi
