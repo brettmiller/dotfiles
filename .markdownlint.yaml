@@ -1,7 +1,7 @@
 # MD009/no-trailing-spaces
 MD009:
   # spaces for line break
-  br_spaces: 2 
+  br_spaces: 2
 # MD013/line-length: false - ignore long line
 MD013: false
 
