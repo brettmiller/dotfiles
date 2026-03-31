@@ -39,7 +39,7 @@
   dy = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   ds = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff"     # side-by-side diff using `colordiff`
   diff-y = "!GIT_EXTERNAL_DIFF=$HOME/scripts/git_diff-y.sh git diff" # side-by-side diff using `colordiff`
-  dmb = "!git b --merged | grep -E -v \"$(git default)|main|master\" | xargs git b -d" # locally delete merged branches excluding 'default', main, master
+  dmb = "!git b --merged | grep -E -v \"$(git default)|main|master\" | xargs git b -d 2>/dev/null || echo none" # locally delete merged branches excluding 'default', main, master
   merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3-"
   delete-merged-on-origin = "!git branch --all --merged $(git symbolic-ref refs/remotes/origin/HEAD --short) | grep -v $(git default) | grep -v HEAD | grep "remotes/origin" | cut -d/ -f 3- | xargs -n 1 git push --delete origin"
   dumb = delete-merged-on-origin # dumb = delete upstream merged branches
@@ -58,7 +58,7 @@
   merge-commits = "!funct() { git log --merges --reverse --oneline --ancestry-path $1..origin | grep \"Merge pull request\"; }; funct"
   pr-number = "!funct() { git merge-commits $1 | head -n1 | sed -n \"s/^.*Merge pull request #\\\\s*\\\\([0-9]*\\\\).*$/\\\\1/p\"; }; funct"
   web-url = "!funct() { git config remote.origin.url | sed -e\"s/git@/https:\\/\\//\" -e\"s/\\.git$//\" | sed -E \"s/(\\/\\/[^:]*):/\\1\\//\"; }; funct"
-  web-url-branch = "!funct() { git config remote.origin.url | sed -e\"s/git@/https:\\/\\//\" -e\"s/\\.git$//\" | sed -E \"s/(\\/\\/[^:]*):/\\1\\//\" | sed -e\"#$#tree/$(git branch --show current)#\"; }; funct"
+  web-url-branch = "!funct() { git config remote.origin.url | sed -e\"s/git@/https:\\/\\//\" -e\"s/\\.git$//\" | sed -E \"s/(\\/\\/[^:]*):/\\1\\//\" | sed -e\"#$#tree/$(git branch --show-current)#\"; }; funct"
   pr = "!funct() { open \"$(git web-url)/pull/$(git pr-number $1)\" ;}; funct"  # given a commit hash, uses 3 prior functions to find and open the github pr containing it
   # end
   listalias = config --get-regexp alias
@@ -78,7 +78,7 @@
   ff = only
 
 [core]
-  attributesfile = /Users/bmille2/.gitattributes
+  attributesfile = ~/.gitattributes
   pager = delta
 
 [delta]
