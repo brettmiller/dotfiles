@@ -1,9 +1,11 @@
-onshellexit() {
- # fc -W
-  fc -A
-  DATE="$(date +'%G-%m-%dT%T')"
-  cp ~/.zsh_history ~/.zsh_history-${DATE}
-}
-
-#trap onshellexit EXIT TERM ZERR
-trap onshellexit EXIT TERM
+# w/ Atuin this is no longer needed
+#
+#onshellexit() {
+# # fc -W
+#  fc -A
+#  DATE="$(date +'%G-%m-%dT%T')"
+#  cp ~/.zsh_history ~/.zsh_history-${DATE}
+#}
+#
+##trap onshellexit EXIT TERM ZERR
+#trap onshellexit EXIT TERM
