@@ -7,10 +7,15 @@
 
 [credential]
   helper = osxkeychain
+  helper =
+  helper = /usr/local/bin/git-credential-manager
 
 # Override for HTTPS
 [credential "https://"]
   helper = /usr/local/bin/git-credential-manager --no-ui
+
+[credential "https://dev.azure.com"]
+  useHttpPath = true
 
 [push]
   default = simple
