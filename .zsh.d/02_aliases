@@ -36,6 +36,7 @@ alias watch='watch '
 # alias for `batman` - `bat` as the `man` pager w/ syntax highlighting
 alias bman='batman'
 alias gvenv='source $(git top)/venv/bin/activate' # activate venv environment in root of repo
+alias pd='popd'
 
 # kubeenv/k8 functions to "better" names and kubeclt to k
 alias k8no='nok8'
