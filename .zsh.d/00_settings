@@ -1,3 +1,4 @@
 # This is for various setting/export we want early
 
-export DO_NOT_TRACK=true
+# https://donottrack.sh/
+export DO_NOT_TRACK=1 # default disable tracking in apps/commands that support it. 
