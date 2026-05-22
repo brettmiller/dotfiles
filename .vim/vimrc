@@ -152,3 +152,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" https://github.com/acarapetis/vim-sh-heredoc-highlighting
+" HEREDOC highlighting use <<-LANGUAGE <<LANGUAGE
+" symlink to bundle/vim-sh-heredoc-highlighting/after/syntax/sh/heredoc-sh.vim in after/syntax/<filetype.vim
+" to get it to work with file types other than .sh
+Plugin 'acarapetis/vim-sh-heredoc-highlighting'
+let g:heredocs = {"YAML": "yaml"}
+
