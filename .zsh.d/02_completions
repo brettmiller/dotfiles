@@ -67,7 +67,7 @@ if command -v glow >/dev/null; then
   glow completion zsh >"${HOME}/.zsh.d/zsh-completions/_glow"
 fi
 
-if command -v sops >/dev/null; thd
+if command -v sops >/dev/null; then
   source <(sops completion zsh)
 fi
 
