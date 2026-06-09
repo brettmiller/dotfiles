@@ -31,8 +31,8 @@ else
 fi
 
 if command -v bat >/dev/null ; then
-  export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+  export FZF_CTRL_T_OPTS="--preview '[ -d {} ] && ls -la {} || bat -n --color=always --line-range :500 {}'"
 elif command -v batcat >/dev/null ; then
-  export FZF_CTRL_T_OPTS="--preview 'batcat -n --color=always --line-range :500 {}'"
+  export FZF_CTRL_T_OPTS="--preview '[ -d {} ] && ls -la {} || batcat -n --color=always --line-range :500 {}'"
 fi
 #export FZT_ALT_C_OPTS=""
